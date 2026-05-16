@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="theme-color" content="#9B1B6E"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>منصة البندري العتيبي التعليمية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;600;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ب</text></svg>"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{direction:rtl;scroll-behavior:smooth}
+
+:root {
+–rose:      #9B1B6E;
+–rose-dark: #6D1250;
+–rose-med:  #B8258A;
+–rose-light:#C94FA0;
+–pink-bg:   #F9EFF5;
+–pink-mid:  #F0D6E8;
+–pink-soft: #FAF0F7;
+–white:     #FFFFFF;
+–text:      #1A0A14;
+–text-mid:  #5A2A48;
+–text-light:#A07090;
+–radius:    18px;
+–radius-sm: 10px;
+–radius-lg: 28px;
+–shadow:    0 4px 24px rgba(155,27,110,0.12);
+–shadow-lg: 0 16px 56px rgba(155,27,110,0.18);
+–font:      ‘Cairo’, sans-serif;
+–font-q:    ‘Amiri’, serif;
+}
+
+body{font-family:var(–font);background:var(–pink-soft);color:var(–text);line-height:1.8;overflow-x:hidden}
+
+/* ===== NAVBAR ===== */
+.nav{
+position:fixed;top:0;right:0;left:0;z-index:1000;
+background:rgba(255,255,255,0.92);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(155,27,110,0.1);
+padding:0 32px;
+height:72px;
+display:flex;align-items:center;justify-content:space-between;
+box-shadow:0 2px 20px rgba(155,27,110,0.08);
+}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{
+width:48px;height:48px;
+background:linear-gradient(135deg,var(–rose),var(–rose-med));
+border-radius:14px;
+display:flex;align-items:center;justify-content:center;
+font-size:22px;font-weight:900;color:white;
+box-shadow:0 4px 14px rgba(155,27,110,0.4);
+font-family:var(–font);
+}
+.nav-name{font-size:17px;font-weight:800;color:var(–rose-dark);line-height:1.2}
+.nav-sub{font-size:11px;color:var(–text-light);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{
+padding:8px 18px;border-radius:var(–radius-sm);
+font-size:15px;font-weight:600;color:var(–text-mid);
+cursor:pointer;transition:all 0.2s;border:none;background:none;
+font-family:var(–font);text-decoration:none;
+}
+.nav-link:hover{background:var(–pink-mid);color:var(–rose)}
+.nav-link.active{background:var(–rose);color:white}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{
+width:40px;height:40px;border-radius:10px;border:none;
+background:var(–pink-mid);cursor:pointer;font-size:18px;
+transition:all 0.2s;display:flex;align-items:center;justify-content:center;
+}
+.nav-btn:hover{background:var(–rose);color:white;transform:translateY(-1px)}
+
+/* ===== HERO ===== */
+.hero-wrap{
+margin-top:72px;
+background:linear-gradient(145deg,var(–rose-dark) 0%,var(–rose) 45%,var(–rose-med) 100%);
+min-height:calc(100vh - 72px);
+display:flex;align-items:center;justify-content:center;
+padding:60px 32px;
+position:relative;overflow:hidden;
+}
+.hero-wrap::before{
+content:’’;position:absolute;
+width:600px;height:600px;
+background:radial-gradient(circle,rgba(255,255,255,0.07) 0%,transparent 70%);
+top:-100px;left:-100px;border-radius:50%;
+pointer-events:none;
+}
+.hero-wrap::after{
+content:’’;position:absolute;
+width:400px;height:400px;
+background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);
+bottom:-80px;right:10%;border-radius:50%;
+pointer-events:none;
+}
+.hero-inner{max-width:800px;width:100%;text-align:center;position:relative;z-index:1}
+.hero-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(255,255,255,0.15);
+border:1px solid rgba(255,255,255,0.25);
+padding:8px 20px;border-radius:50px;
+color:white;font-size:14px;font-weight:600;
+margin-bottom:32px;backdrop-filter:blur(8px);
+}
+.hero-title{
+font-family:var(–font);font-size:clamp(32px,6vw,64px);
+font-weight:900;color:white;line-height:1.25;
+margin-bottom:24px;
+}
+.hero-desc{
+font-size:18px;color:rgba(255,255,255,0.85);
+line-height:1.8;margin-bottom:40px;max-width:620px;margin-inline:auto;
+}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary-hero{
+padding:14px 32px;border-radius:var(–radius);
+background:white;color:var(–rose);
+font-size:16px;font-weight:700;
+border:none;cursor:pointer;font-family:var(–font);
+transition:all 0.25s;box-shadow:0 8px 24px rgba(0,0,0,0.15);
+}
+.btn-primary-hero:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,0.2)}
+.btn-outline-hero{
+padding:14px 32px;border-radius:var(–radius);
+background:rgba(255,255,255,0.12);
+border:2px solid rgba(255,255,255,0.4);
+color:white;font-size:16px;font-weight:700;
+cursor:pointer;font-family:var(–font);
+transition:all 0.25s;backdrop-filter:blur(8px);
+}
+.btn-outline-hero:hover{background:rgba(255,255,255,0.22);transform:translateY(-2px)}
+.hero-teacher-card{
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:var(–radius-lg);
+padding:32px;backdrop-filter:blur(12px);
+display:inline-flex;flex-direction:column;align-items:center;gap:12px;
+min-width:260px;
+}
+.teacher-avatar{
+width:80px;height:80px;background:white;border-radius:20px;
+display:flex;align-items:center;justify-content:center;font-size:42px;
+box-shadow:0 8px 24px rgba(0,0,0,0.12);
+}
+.teacher-name{font-size:20px;font-weight:800;color:white}
+.teacher-desc{font-size:14px;color:rgba(255,255,255,0.75)}
+
+/* ===== STATS ===== */
+.stats-section{padding:60px 32px;background:var(–pink-soft)}
+.stats-grid{
+max-width:900px;margin:0 auto;
+display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;
+}
+.stat-card{
+background:white;border-radius:var(–radius);padding:32px 24px;
+text-align:center;border:1px solid var(–pink-mid);
+box-shadow:var(–shadow);transition:all 0.25s;
+}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(–shadow-lg);border-color:rgba(155,27,110,0.25)}
+.stat-num{font-size:48px;font-weight:900;color:var(–rose);line-height:1;margin-bottom:8px;font-family:var(–font)}
+.stat-lbl{font-size:15px;color:var(–text-mid);font-weight:600}
+
+/* ===== SECTION COMMON ===== */
+.section{padding:80px 32px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{
+display:inline-block;
+background:var(–pink-mid);color:var(–rose);
+padding:6px 18px;border-radius:50px;
+font-size:13px;font-weight:700;margin-bottom:16px;
+}
+.section-title{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(–text);margin-bottom:12px;line-height:1.3}
+.section-sub{font-size:17px;color:var(–text-mid);margin-bottom:48px;line-height:1.7}
+
+/* ===== FEATURES ===== */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.feat-card{
+background:white;border-radius:var(–radius);padding:32px;
+border:1px solid var(–pink-mid);box-shadow:var(–shadow);
+transition:all 0.3s;position:relative;overflow:hidden;
+}
+.feat-card::before{
+content:’’;position:absolute;top:0;right:0;
+width:4px;height:100%;background:linear-gradient(180deg,var(–rose),var(–rose-light));
+border-radius:0 var(–radius) var(–radius) 0;
+}
+.feat-card:hover{transform:translateY(-4px);box-shadow:var(–shadow-lg);border-color:rgba(155,27,110,0.2)}
+.feat-icon{
+width:56px;height:56px;border-radius:16px;
+background:linear-gradient(135deg,var(–rose),var(–rose-light));
+display:flex;align-items:center;justify-content:center;
+font-size:26px;margin-bottom:20px;
+box-shadow:0 8px 20px rgba(155,27,110,0.25);
+}
+.feat-title{font-size:18px;font-weight:800;color:var(–text);margin-bottom:10px}
+.feat-desc{font-size:14px;color:var(–text-mid);line-height:1.8}
+
+/* ===== BOOKS ===== */
+.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+.book-card{
+background:white;border-radius:var(–radius-lg);overflow:hidden;
+box-shadow:var(–shadow);border:1px solid var(–pink-mid);
+cursor:pointer;transition:all 0.3s;
+}
+.book-card:hover{transform:translateY(-6px);box-shadow:var(–shadow-lg)}
+.book-cover{
+padding:36px 28px 56px;color:white;position:relative;overflow:hidden;
+}
+.book-cover::after{
+content:’’;position:absolute;
+bottom:-30px;left:-10px;right:-10px;height:70px;
+background:white;border-radius:50%;
+}
+.book-emoji{font-size:56px;display:block;margin-bottom:14px;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2))}
+.book-name{font-size:22px;font-weight:800;margin-bottom:4px}
+.book-by{font-size:13px;opacity:0.8}
+.book-body{padding:24px 28px}
+.book-meta{display:flex;gap:12px;margin-bottom:20px}
+.badge{
+padding:5px 14px;border-radius:50px;
+font-size:12px;font-weight:700;
+background:var(–pink-mid);color:var(–rose);
+}
+.book-progress-wrap{margin-bottom:20px}
+.book-progress-hd{display:flex;justify-content:space-between;font-size:13px;color:var(–text-mid);margin-bottom:8px}
+.book-bar{background:var(–pink-mid);border-radius:50px;height:8px;overflow:hidden}
+.book-fill{height:100%;border-radius:50px;transition:width 1s ease}
+.btn-book{
+width:100%;padding:13px;border:none;border-radius:var(–radius-sm);
+font-size:15px;font-weight:700;cursor:pointer;font-family:var(–font);
+transition:all 0.25s;color:white;
+}
+.btn-book:hover{opacity:0.9;transform:translateY(-1px)}
+
+/* ===== LESSON VIEW ===== */
+#lesson-view{display:none}
+.lesson-topbar{
+display:flex;justify-content:space-between;align-items:center;
+margin-bottom:28px;gap:12px;flex-wrap:wrap;
+}
+.lesson-nav-btn{
+display:flex;align-items:center;gap:6px;
+padding:10px 20px;border-radius:var(–radius-sm);
+border:1.5px solid var(–pink-mid);background:white;
+font-family:var(–font);font-size:14px;font-weight:600;
+color:var(–text-mid);cursor:pointer;transition:all 0.2s;
+}
+.lesson-nav-btn:hover{border-color:var(–rose);color:var(–rose);background:var(–pink-soft)}
+.lesson-header-card{
+background:linear-gradient(135deg,var(–rose-dark),var(–rose-med));
+border-radius:var(–radius-lg);padding:40px 36px;
+color:white;margin-bottom:28px;position:relative;overflow:hidden;
+}
+.lesson-header-card::before{
+content:’’;position:absolute;top:-40px;left:-40px;
+width:200px;height:200px;
+background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);
+border-radius:50%;pointer-events:none;
+}
+.lesson-num-tag{
+display:inline-block;padding:4px 16px;border-radius:50px;
+background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
+font-size:13px;font-weight:600;margin-bottom:14px;
+}
+.lesson-main-title{font-size:clamp(22px,3vw,34px);font-weight:900;margin-bottom:8px}
+.lesson-book-tag{font-size:14px;opacity:0.75}
+.cards-grid{display:grid;gap:20px}
+.content-card{
+background:white;border-radius:var(–radius);
+border:1px solid var(–pink-mid);box-shadow:var(–shadow);
+overflow:hidden;transition:box-shadow 0.2s;
+}
+.content-card:hover{box-shadow:var(–shadow-lg)}
+.card-head{
+padding:18px 24px;display:flex;align-items:center;gap:12px;
+border-bottom:1px solid var(–pink-mid);
+}
+.card-ico{
+width:42px;height:42px;border-radius:12px;
+display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
+}
+.ico-pink{background:rgba(155,27,110,0.1)}
+.ico-purple{background:rgba(130,60,180,0.1)}
+.ico-blue{background:rgba(30,90,180,0.1)}
+.ico-green{background:rgba(30,140,90,0.1)}
+.card-ttl{font-size:16px;font-weight:800;color:var(–text)}
+.card-body{padding:24px}
+.obj-list{list-style:none}
+.obj-list li{
+display:flex;align-items:flex-start;gap:10px;
+padding:10px 0;border-bottom:1px solid var(–pink-mid);
+font-size:15px;line-height:1.6;
+}
+.obj-list li:last-child{border-bottom:none}
+.obj-list li::before{
+content:‘✓’;min-width:26px;height:26px;
+background:linear-gradient(135deg,var(–rose),var(–rose-light));
+color:white;border-radius:50%;display:flex;align-items:center;
+justify-content:center;font-size:12px;font-weight:700;
+margin-top:2px;flex-shrink:0;
+}
+.content-text{font-size:16px;line-height:2.1;color:var(–text);white-space:pre-wrap}
+.examples-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.example-pill{
+background:linear-gradient(135deg,var(–pink-soft),var(–pink-mid));
+border:1px solid rgba(155,27,110,0.15);border-radius:var(–radius-sm);
+padding:14px 16px;font-family:var(–font-q);font-size:17px;
+color:var(–rose-dark);text-align:center;transition:all 0.2s;
+}
+.example-pill:hover{border-color:var(–rose);transform:translateY(-2px);box-shadow:var(–shadow)}
+.summary-box{
+background:linear-gradient(135deg,rgba(155,27,110,0.06),rgba(200,80,160,0.06));
+border:1px solid rgba(155,27,110,0.18);border-radius:var(–radius-sm);
+padding:20px 24px;font-size:16px;line-height:1.9;color:var(–rose-dark);font-weight:500;
+}
+/* Flashcard */
+.flashcard-wrap{perspective:1000px}
+.flashcard{
+width:100%;min-height:200px;position:relative;
+transform-style:preserve-3d;transition:transform 0.6s;cursor:pointer;
+}
+.flashcard.flipped{transform:rotateY(180deg)}
+.fc-face{
+position:absolute;top:0;left:0;right:0;bottom:0;
+backface-visibility:hidden;border-radius:var(–radius);
+display:flex;align-items:center;justify-content:center;
+text-align:center;padding:32px;
+}
+.fc-front{background:linear-gradient(135deg,var(–rose-dark),var(–rose))}
+.fc-back{background:linear-gradient(135deg,var(–rose),var(–rose-light));transform:rotateY(180deg)}
+.fc-text{font-size:20px;font-weight:700;color:white;line-height:1.6}
+.fc-hint{font-size:12px;color:rgba(255,255,255,0.65);margin-top:14px}
+/* Video */
+.video-box{
+background:linear-gradient(135deg,#1a0a14,#2d1020);
+border-radius:var(–radius);aspect-ratio:16/9;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+color:white;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;
+}
+.play-circle{
+width:72px;height:72px;border-radius:50%;
+background:rgba(155,27,110,0.85);
+display:flex;align-items:center;justify-content:center;
+font-size:26px;margin-bottom:16px;transition:all 0.2s;
+box-shadow:0 8px 24px rgba(155,27,110,0.5);
+}
+.video-box:hover .play-circle{transform:scale(1.1);background:var(–rose)}
+/* Quiz */
+.quiz-q{
+background:white;border-radius:var(–radius);padding:24px;
+margin-bottom:16px;border:1px solid var(–pink-mid);box-shadow:var(–shadow);
+}
+.quiz-num{font-size:12px;color:var(–rose);font-weight:700;margin-bottom:8px}
+.quiz-text{font-size:17px;font-weight:700;color:var(–text);margin-bottom:20px;line-height:1.6}
+.quiz-choices{display:grid;gap:10px}
+.quiz-choice{
+padding:12px 20px;border:1.5px solid var(–pink-mid);border-radius:var(–radius-sm);
+cursor:pointer;font-family:var(–font);font-size:15px;
+background:var(–pink-soft);color:var(–text);transition:all 0.2s;text-align:right;
+position:relative;overflow:hidden;
+}
+.quiz-choice:hover{border-color:var(–rose-light);background:var(–pink-mid)}
+.quiz-choice.correct{border-color:var(–rose);background:rgba(155,27,110,0.08);color:var(–rose-dark);font-weight:600}
+.quiz-choice.correct::before{content:‘✓’;position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(–rose);font-weight:700}
+.quiz-choice.wrong{border-color:#e53e3e;background:rgba(229,62,62,0.08);color:#c53030}
+.quiz-choice.wrong::before{content:‘✗’;position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#e53e3e;font-weight:700}
+.quiz-choice:disabled{cursor:not-allowed}
+.quiz-result{
+text-align:center;padding:36px;
+background:linear-gradient(135deg,var(–rose-dark),var(–rose));
+border-radius:var(–radius);color:white;margin-top:20px;display:none;
+}
+.quiz-result.show{display:block;animation:fadeUp 0.4s ease}
+.quiz-score{font-size:64px;font-weight:900;margin-bottom:8px;line-height:1}
+.quiz-feedback{font-size:20px;margin-bottom:20px;opacity:0.9}
+.btn-retry{
+background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.35);
+color:white;padding:10px 28px;border-radius:var(–radius-sm);
+cursor:pointer;font-family:var(–font);font-size:15px;transition:all 0.2s;
+}
+.btn-retry:hover{background:rgba(255,255,255,0.25)}
+/* complete btn */
+.complete-btn{
+width:100%;max-width:340px;margin:0 auto;display:block;
+padding:18px 32px;border:none;border-radius:var(–radius);
+background:linear-gradient(135deg,var(–rose-dark),var(–rose-light));
+color:white;font-size:18px;font-weight:700;
+cursor:pointer;font-family:var(–font);transition:all 0.3s;
+box-shadow:0 8px 24px rgba(155,27,110,0.3);
+}
+.complete-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(155,27,110,0.4)}
+/* next lesson */
+.next-lesson-card{
+background:white;border:1.5px solid var(–pink-mid);border-radius:var(–radius);
+padding:24px 28px;display:flex;align-items:center;gap:16px;
+cursor:pointer;transition:all 0.25s;margin-bottom:40px;
+}
+.next-lesson-card:hover{border-color:var(–rose);box-shadow:var(–shadow-lg)}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+width:300px;background:white;border-left:1px solid var(–pink-mid);
+position:fixed;right:0;top:72px;bottom:0;overflow-y:auto;
+z-index:100;padding:20px 0;transition:transform 0.3s ease;
+box-shadow:-2px 0 20px rgba(155,27,110,0.06);
+}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(155,27,110,0.2);border-radius:4px}
+.main-area{margin-right:300px;padding:36px;min-height:calc(100vh - 72px)}
+
+/* sidebar items */
+.sb-search-wrap{padding:0 16px 16px;position:relative}
+.sb-search{
+width:100%;padding:10px 16px;border:1.5px solid var(–pink-mid);
+border-radius:var(–radius-sm);background:var(–pink-soft);
+font-family:var(–font);font-size:14px;color:var(–text);
+outline:none;direction:rtl;transition:all 0.2s;
+}
+.sb-search:focus{border-color:var(–rose);box-shadow:0 0 0 3px rgba(155,27,110,0.1)}
+.sb-results{
+position:absolute;top:calc(100% - 8px);right:16px;left:16px;
+background:white;border-radius:var(–radius-sm);box-shadow:var(–shadow-lg);
+border:1px solid var(–pink-mid);max-height:280px;overflow-y:auto;
+z-index:1000;display:none;
+}
+.sb-results.show{display:block}
+.sb-result-item{
+padding:12px 16px;cursor:pointer;transition:all 0.15s;
+border-bottom:1px solid var(–pink-mid);
+}
+.sb-result-item:last-child{border-bottom:none}
+.sb-result-item:hover{background:var(–pink-soft)}
+.sb-result-title{font-weight:600;font-size:14px;color:var(–text)}
+.sb-result-book{font-size:12px;color:var(–text-light);margin-top:2px}
+.sb-book-header{
+display:flex;align-items:center;gap:10px;
+padding:12px 16px;cursor:pointer;
+font-weight:700;font-size:14px;color:var(–text);
+border-right:3px solid transparent;transition:all 0.2s;
+}
+.sb-book-header:hover{background:var(–pink-soft);border-right-color:rgba(155,27,110,0.3)}
+.sb-book-header.active{background:var(–pink-mid);border-right-color:var(–rose);color:var(–rose-dark)}
+.sb-book-content{display:none;padding:4px 0 8px}
+.sb-book-content.expanded{display:block}
+.sb-chapter{
+padding:6px 16px 6px 44px;font-size:12px;
+color:var(–text-light);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+}
+.sb-lesson{
+display:flex;align-items:center;gap:8px;
+padding:9px 16px 9px 44px;font-size:13px;color:var(–text-mid);
+cursor:pointer;transition:all 0.15s;border-right:3px solid transparent;
+}
+.sb-lesson:hover{background:var(–pink-soft);color:var(–text)}
+.sb-lesson.active{color:var(–rose);font-weight:700;border-right-color:var(–rose);background:rgba(155,27,110,0.04)}
+.sb-badge{
+min-width:22px;height:22px;border-radius:50%;
+background:var(–pink-mid);font-size:11px;
+display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;
+}
+.sb-lesson.active .sb-badge{background:var(–rose);color:white}
+
+/* ===== DASHBOARD ===== */
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-bottom:32px}
+.dash-card{
+background:white;border-radius:var(–radius);padding:28px 24px;
+text-align:center;border:1px solid var(–pink-mid);box-shadow:var(–shadow);
+transition:all 0.25s;
+}
+.dash-card:hover{transform:translateY(-3px);box-shadow:var(–shadow-lg)}
+.dash-icon{font-size:36px;margin-bottom:12px}
+.dash-val{font-size:40px;font-weight:900;color:var(–rose);line-height:1;margin-bottom:6px}
+.dash-lbl{font-size:14px;color:var(–text-mid);font-weight:600}
+
+/* ===== OVERLAY / TOAST ===== */
+.sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:99}
+.sb-overlay.show{display:block}
+.toast{
+position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(100px);
+background:var(–rose-dark);color:white;padding:14px 28px;
+border-radius:50px;font-size:14px;font-weight:600;
+z-index:9999;transition:transform 0.3s;box-shadow:var(–shadow-lg);
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ===== CONTACT ===== */
+.contact-section{
+background:linear-gradient(135deg,var(–rose-dark),var(–rose-med));
+padding:80px 32px;text-align:center;color:white;
+}
+.contact-title{font-size:36px;font-weight:900;margin-bottom:16px}
+.contact-desc{font-size:17px;opacity:0.85;margin-bottom:40px;max-width:500px;margin-inline:auto}
+.contact-cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.contact-card{
+background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
+border-radius:var(–radius);padding:24px 32px;backdrop-filter:blur(8px);
+transition:all 0.2s;cursor:pointer;
+}
+.contact-card:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.contact-card-icon{font-size:28px;margin-bottom:10px}
+.contact-card-lbl{font-size:14px;font-weight:700;opacity:0.85}
+
+/* ===== FOOTER ===== */
+footer{background:var(–rose-dark);color:rgba(255,255,255,0.7);text-align:center;padding:24px;font-size:14px}
+footer span{color:white;font-weight:700}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+.sidebar{transform:translateX(300px)}
+.sidebar.open{transform:translateX(0)}
+.main-area{margin-right:0;padding:24px 16px}
+.nav-links{display:none}
+}
+@media(max-width:640px){
+.nav{padding:0 16px}
+.hero-wrap{padding:40px 20px}
+.hero-title{font-size:32px}
+.stats-grid{grid-template-columns:1fr 1fr}
+.section{padding:60px 20px}
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(24px);animation:fadeUp 0.6s ease forwards}
+.fade-in:nth-child(1){animation-delay:0.1s}
+.fade-in:nth-child(2){animation-delay:0.2s}
+.fade-in:nth-child(3){animation-delay:0.3s}
+.fade-in:nth-child(4){animation-delay:0.4s}
+.fade-in:nth-child(5){animation-delay:0.5s}
+.fade-in:nth-child(6){animation-delay:0.6s}
+
+/* page visibility */
+.page{display:none}
+.page.active{display:block}
+</style>
+
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="nav">
+  <a class="nav-brand" href="#" onclick="UI.goHome();return false">
+    <div class="nav-logo">ب</div>
+    <div>
+      <div class="nav-name">منصة البندري العتيبي التعليمية</div>
+      <div class="nav-sub">الصف السادس الابتدائي • ١٤٤٧هـ</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="#" onclick="UI.goHome();return false">الرئيسية</a>
+    <a class="nav-link" href="#materials" onclick="UI.scrollTo('materials');return false">المواد</a>
+    <a class="nav-link" href="#features" onclick="UI.scrollTo('features');return false">المميزات</a>
+    <a class="nav-link" href="#lessons" onclick="UI.showPlatform();return false">الدروس</a>
+    <a class="nav-link" href="#contact" onclick="UI.scrollTo('contact');return false">تواصل</a>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" id="menu-toggle" title="القائمة">☰</button>
+    <button class="nav-btn" id="theme-btn" title="الوضع الليلي">🌙</button>
+    <button class="nav-btn" id="dash-btn" title="لوحة المتابعة" onclick="UI.showDash()">📊</button>
+  </div>
+</nav>
+
+<!-- ===== LANDING PAGE ===== -->
+
+<div id="landing-page" class="page active">
+
+  <!-- Hero -->
+
+  <div class="hero-wrap">
+    <div class="hero-inner">
+      <div class="hero-badge">✨ منصة تعليمية منظمة وواضحة</div>
+
+```
+  <div class="hero-btns">
+    <button class="btn-primary-hero" onclick="UI.showPlatform()">استعراض المواد</button>
+    <button class="btn-outline-hero" onclick="UI.scrollTo('lessons-section')">الدروس والوحدات</button>
+  </div>
+  <div class="hero-teacher-card">
+    <div class="teacher-avatar">👩‍🏫</div>
+    <div class="teacher-name">الأستاذة البندري العتيبي</div>
+    <div class="teacher-desc">تعليم • تنظيم • متابعة • تطوير</div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- Stats -->
+
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-num" id="stat-units">١٢</div>
+        <div class="stat-lbl">وحدة تعليمية</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-num" id="stat-books">٣</div>
+        <div class="stat-lbl">مواد دراسية</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-num">١٠٠٪</div>
+        <div class="stat-lbl">واجهة واضحة</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-num" id="stat-lessons">٣٦</div>
+        <div class="stat-lbl">درس منظم</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materials -->
+
+  <div class="section" id="materials">
+    <div class="section-inner">
+      <div class="section-label">📚 المواد الدراسية</div>
+
+```
+  <div class="books-grid" id="landing-books"></div>
+</div>
+```
+
+  </div>
+
+  <!-- Features -->
+
+  <div class="section" id="features" style="background:white">
+    <div class="section-inner">
+      <div class="section-label">⭐ المميزات</div>
+      <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
+      <p class="section-sub">منصة مصممة خصيصاً لتجعل التعلم أسهل وأمتع</p>
+      <div class="features-grid">
+        <div class="feat-card fade-in">
+          <div class="feat-icon">📖</div>
+          <div class="feat-title">دروس منظمة</div>
+          <div class="feat-desc">جميع الدروس مرتبة مع شرح واضح وأهداف محددة لكل درس</div>
+        </div>
+        <div class="feat-card fade-in">
+          <div class="feat-icon">🧠</div>
+          <div class="feat-title">اختبارات تفاعلية</div>
+          <div class="feat-desc">اختبر فهمك لكل درس مع تصحيح فوري وتغذية راجعة</div>
+        </div>
+        <div class="feat-card fade-in">
+          <div class="feat-icon">🃏</div>
+          <div class="feat-title">بطاقات المراجعة</div>
+          <div class="feat-desc">بطاقات تفاعلية للمراجعة السريعة قبل الاختبارات</div>
+        </div>
+        <div class="feat-card fade-in">
+          <div class="feat-icon">📊</div>
+          <div class="feat-title">تتبع التقدم</div>
+          <div class="feat-desc">راقب تقدمك الدراسي ونسبة إنجازك في كل مادة</div>
+        </div>
+        <div class="feat-card fade-in">
+          <div class="feat-icon">🔍</div>
+          <div class="feat-title">بحث سريع</div>
+          <div class="feat-desc">ابحث في جميع المناهج والدروس في ثوانٍ معدودة</div>
+        </div>
+
+```
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- Lessons preview -->
+
+  <div class="section" id="lessons-section">
+    <div class="section-inner">
+      <div class="section-label">📝 الدروس والوحدات</div>
+      <h2 class="section-title">ابدأ رحلتك التعليمية</h2>
+      <p class="section-sub">اختر المادة واستعرض دروسها بشكل منظم</p>
+      <div style="text-align:center">
+        <button class="btn-primary-hero" style="background:var(--rose);color:white;display:inline-block;padding:16px 40px;font-size:17px" onclick="UI.showPlatform()">
+          🚀 ادخل إلى المنصة
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+
+  <div class="contact-section" id="contact">
+    <div class="contact-title">تواصلي معنا</div>
+    <div class="contact-desc">لديك سؤال أو اقتراح؟ نحن هنا للمساعدة</div>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon">📧</div>
+        <div class="contact-card-lbl">البريد الإلكتروني</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">💬</div>
+        <div class="contact-card-lbl">واتساب</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🏫</div>
+        <div class="contact-card-lbl">المدرسة</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    صُممت بـ ❤️ بواسطة <span>الأستاذة البندري العتيبي</span> • الصف السادس الابتدائي • ١٤٤٧هـ
+  </footer>
+
+</div><!-- end landing -->
+
+<!-- ===== PLATFORM PAGE ===== -->
+
+<div id="platform-page" class="page">
+  <div class="sidebar" id="sidebar">
+    <div class="sb-search-wrap">
+      <input type="text" class="sb-search" id="sb-search" placeholder="🔍 ابحث في المناهج..." oninput="App.search(this.value)"/>
+      <div class="sb-results" id="sb-results"></div>
+    </div>
+    <div id="sidebar-nav"></div>
+  </div>
+  <div class="sb-overlay" id="sb-overlay"></div>
+  <div class="main-area" id="main-area">
+    <!-- home books -->
+    <div id="platform-home">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;flex-wrap:wrap;gap:12px">
+        <div>
+          <div class="section-label">الكتب الدراسية</div>
+          <h2 class="section-title" style="margin-bottom:0">اختاري المادة</h2>
+        </div>
+        <button onclick="UI.goHome()" style="padding:10px 20px;border:1.5px solid var(--pink-mid);background:white;border-radius:var(--radius-sm);font-family:var(--font);font-size:14px;color:var(--text-mid);cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='var(--rose)';this.style.color='var(--rose)'" onmouseout="this.style.borderColor='var(--pink-mid)';this.style.color='var(--text-mid)'">
+          🏠 الرئيسية
+        </button>
+      </div>
+      <div id="platform-books-grid" class="books-grid"></div>
+    </div>
+    <!-- lesson view -->
+    <div id="lesson-view" style="display:none"></div>
+    <!-- dashboard -->
+    <div id="dash-view" style="display:none"></div>
+  </div>
+</div><!-- end platform -->
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== منصة البندري العتيبي التعليمية - بيانات المناهج =====
+// الصف السادس الابتدائي - طبعة 1447هـ / 2025م
+
+const PLATFORM_DATA = {
+  grade: "السادس الابتدائي",
+  academicYear: "١٤٤٧هـ - ٢٠٢٥م",
+  books: [
+
+    // ============================
+    // الكتاب الأول: التجويد
+    // ============================
+    {
+      id: "tajweed",
+      title: "التجويد",
+      subtitle: "مدارس تحفيظ القرآن الكريم",
+      grade: "السادس الابتدائي",
+      icon: "📖",
+      color: "#D63384",
+      coverColor: "#A0205F",
+      totalLessons: 11,
+      units: [
+        {
+          id: "tajweed-part1",
+          title: "الجزء الأول من المقرر",
+          chapters: [
+            {
+              id: "madd-chapter",
+              title: "أحكام المد",
+              lessons: [
+                {
+                  id: "lesson-1",
+                  number: 1,
+                  title: "المـد",
+                  page: 8,
+                  objectives: [
+                    "أتعرف على معنى المد ورسمه",
+                    "أميز مواضع المد",
+                    "أطبق المد بصفة صحيحة عند التلاوة"
+                  ],
+                  content: `المد في اللغة: الزيادة والإطالة.
+المد في الاصطلاح: إطالة الصوت بحرف من حروف المد.
+حروف المد ثلاثة: الألف الساكنة المفتوح ما قبلها، والواو الساكنة المضموم ما قبلها، والياء الساكنة المكسور ما قبلها.`,
+                  examples: ["قَالَ (مد بالألف)", "يَقُولُ (مد بالواو)", "قِيلَ (مد بالياء)"],
+                  summary: "المد هو إطالة الصوت بأحد الحروف الثلاثة: الألف أو الواو أو الياء",
+                  quiz: [
+                    { q: "ما معنى المد في اللغة؟", a: "الزيادة والإطالة", choices: ["الزيادة والإطالة", "النقصان", "التسكين", "الفتح"] },
+                    { q: "كم عدد حروف المد؟", a: "ثلاثة", choices: ["اثنان", "ثلاثة", "أربعة", "خمسة"] },
+                    { q: "أي الكلمات التالية فيها مد بالألف؟", a: "قَالَ", choices: ["قِيلَ", "يَقُولُ", "قَالَ", "مِنْ"] }
+                  ]
+                },
+                {
+                  id: "lesson-2",
+                  number: 2,
+                  title: "حروف المـد",
+                  page: 12,
+                  objectives: [
+                    "أعرف حروف المد وشروطها",
+                    "أميز بين حروف المد وغيرها",
+                    "أطبق الحكم تطبيقاً صحيحاً"
+                  ],
+                  content: `حروف المد ثلاثة:
+١- الألف: وشرطها أن تكون ساكنة مفتوح ما قبلها. مثل: قَالَ
+٢- الواو: وشرطها أن تكون ساكنة مضموماً ما قبلها. مثل: يَقُولُ
+٣- الياء: وشرطها أن تكون ساكنة مكسوراً ما قبلها. مثل: قِيلَ`,
+                  examples: ["قَالَ ← ألف ساكنة بعد فتح", "يَقُولُ ← واو ساكنة بعد ضم", "قِيلَ ← ياء ساكنة بعد كسر"],
+                  summary: "لكل حرف من حروف المد شرط خاص في الحركة التي قبله",
+                  quiz: [
+                    { q: "ما شرط حرف الألف ليكون حرف مد؟", a: "أن يكون ما قبله مفتوحاً", choices: ["أن يكون ما قبله مفتوحاً", "أن يكون ما قبله مضموماً", "أن يكون ما قبله مكسوراً", "لا شرط"] },
+                    { q: "في كلمة (يَقُولُ) حرف المد هو؟", a: "الواو", choices: ["الألف", "الواو", "الياء", "الهاء"] }
+                  ]
+                },
+                {
+                  id: "lesson-3",
+                  number: 3,
+                  title: "أقسام المـد",
+                  page: 18,
+                  objectives: [
+                    "أعرف أقسام المد الرئيسية",
+                    "أفرق بين المد الأصلي والفرعي",
+                    "أطبق الحكم الصحيح"
+                  ],
+                  content: `ينقسم المد إلى قسمين:
+١- المد الأصلي (الطبيعي): هو المد الذي لا تقوم ذات الحرف إلا به، ولا يتوقف على سبب من همز أو سكون. مقداره: حركتان.
+٢- المد الفرعي: هو المد الزائد على المد الطبيعي بسبب الهمز أو السكون. ومقداره يتراوح بين أربع وست حركات.`,
+                  examples: ["المد الطبيعي: قَالَ (حركتان)", "المد الفرعي: جَاءَ (أربع أو خمس حركات بسبب الهمز)"],
+                  summary: "المد نوعان: أصلي طبيعي (حركتان)، وفرعي زائد عليه بسبب همز أو سكون",
+                  quiz: [
+                    { q: "كم مقدار المد الأصلي؟", a: "حركتان", choices: ["حركة واحدة", "حركتان", "أربع حركات", "ست حركات"] },
+                    { q: "ما سبب المد الفرعي؟", a: "الهمز أو السكون", choices: ["الهمز أو السكون", "الفتح", "الضم", "الكسر"] }
+                  ]
+                },
+                {
+                  id: "lesson-4",
+                  number: 4,
+                  title: "أنواع المد الفرعي",
+                  page: 24,
+                  objectives: [
+                    "أعرف أنواع المد الفرعي",
+                    "أميز بين المد بسبب الهمز والمد بسبب السكون",
+                    "أطبق كل نوع بمقداره الصحيح"
+                  ],
+                  content: `المد الفرعي نوعان:
+أولاً: المد بسبب الهمز، وله نوعان:
+- المد المتصل: إذا جاء الهمز بعد حرف المد في كلمة واحدة.
+- المد المنفصل: إذا جاء الهمز في أول كلمة بعد انتهاء كلمة فيها حرف مد.
+
+ثانياً: المد بسبب السكون، وله نوعان:
+- المد العارض للسكون: إذا جاء بعد حرف المد حرف متحرك عارضت له السكون.
+- المد اللازم: إذا جاء بعد حرف المد سكون أصلي.`,
+                  examples: ["متصل: جَاءَ، السَّمَاءِ", "منفصل: إِنَّا أَعْطَيْنَاكَ", "عارض: نَسْتَعِينُ (عند الوقف)", "لازم: الضَّالِّينَ"],
+                  summary: "المد الفرعي بسبب الهمز: متصل ومنفصل. وبسبب السكون: عارض ولازم",
+                  quiz: [
+                    { q: "ما نوع المد في كلمة (السَّمَاءِ)؟", a: "مد متصل", choices: ["مد طبيعي", "مد متصل", "مد منفصل", "مد لازم"] },
+                    { q: "المد المنفصل يكون الهمز فيه في؟", a: "أول الكلمة التالية", choices: ["نفس الكلمة", "أول الكلمة التالية", "آخر الكلمة", "وسط الكلمة"] }
+                  ]
+                },
+                {
+                  id: "lesson-5",
+                  number: 5,
+                  title: "المد المتصل",
+                  page: 30,
+                  objectives: [
+                    "أعرف تعريف المد المتصل وحكمه",
+                    "أطبق المد المتصل بمقداره الصحيح"
+                  ],
+                  content: `المد المتصل: هو أن يأتي الهمز بعد حرف المد في كلمة واحدة.
+مثل: جَاءَ، جِيءَ، سُوءَ.
+حكمه: واجب مده بمقدار أربع أو خمس حركات.`,
+                  examples: ["جَاءَ ← ألف ثم همز في نفس الكلمة", "جِيءَ ← ياء ثم همز في نفس الكلمة", "سُوءَ ← واو ثم همز في نفس الكلمة"],
+                  summary: "المد المتصل: همز بعد حرف مد في كلمة واحدة، ومقداره 4-5 حركات وجوباً",
+                  quiz: [
+                    { q: "ما مقدار المد المتصل؟", a: "أربع أو خمس حركات", choices: ["حركتان", "ثلاث حركات", "أربع أو خمس حركات", "ست حركات"] },
+                    { q: "ما حكم المد المتصل؟", a: "واجب", choices: ["جائز", "واجب", "لازم", "طبيعي"] }
+                  ]
+                },
+                {
+                  id: "lesson-6",
+                  number: 6,
+                  title: "المد المنفصل",
+                  page: 35,
+                  objectives: [
+                    "أعرف تعريف المد المنفصل وحكمه",
+                    "أميز بين المتصل والمنفصل",
+                    "أطبق الحكم عند التلاوة"
+                  ],
+                  content: `المد المنفصل: هو أن يأتي الهمز في أول كلمة تالية لكلمة تنتهي بحرف مد.
+مثل: إِنَّا أَعْطَيْنَاكَ، بِمَا أُنزِلَ.
+حكمه: جائز مده حركتين أو أربعاً أو خمساً.`,
+                  examples: ["إِنَّا أَعْطَيْنَاكَ ← نون المد ثم همز في الكلمة التالية", "بِمَا أُنزِلَ ← ألف المد ثم همز في الكلمة التالية"],
+                  summary: "المد المنفصل: همز في أول كلمة بعد حرف مد في كلمة قبلها، ومقداره 2-5 حركات جوازاً",
+                  quiz: [
+                    { q: "ما الفرق بين المد المتصل والمنفصل؟", a: "في المتصل الهمز في نفس الكلمة، وفي المنفصل في كلمة منفصلة", choices: ["لا فرق", "في المتصل الهمز في نفس الكلمة، وفي المنفصل في كلمة منفصلة", "المتصل مقداره أقل", "المنفصل واجب"] }
+                  ]
+                },
+                {
+                  id: "lesson-7",
+                  number: 7,
+                  title: "المد العارض للسكون",
+                  page: 42,
+                  objectives: [
+                    "أعرف المد العارض للسكون",
+                    "أطبقه عند الوقف"
+                  ],
+                  content: `المد العارض للسكون: هو حرف المد الذي يأتي قبل حرف متحرك في الوصل، فإذا وقفنا عليه سكن فمددناه.
+مقداره: حركتان أو أربع أو ست حركات عند الوقف.`,
+                  examples: ["نَسْتَعِينُ ← عند الوقف يصبح: نَسْتَعِينْ (مد بالياء الساكنة)", "الرَّحِيمُ ← عند الوقف: الرَّحِيمْ"],
+                  summary: "مد عارض للسكون: يظهر عند الوقف فقط بتسكين الحرف بعد حرف المد",
+                  quiz: [
+                    { q: "متى يظهر المد العارض للسكون؟", a: "عند الوقف", choices: ["عند الوصل", "عند الوقف", "دائماً", "عند البسملة"] }
+                  ]
+                },
+                {
+                  id: "lesson-8",
+                  number: 8,
+                  title: "المد اللازم",
+                  page: 47,
+                  objectives: [
+                    "أعرف المد اللازم وسبب تسميته",
+                    "أطبقه بمقداره الصحيح"
+                  ],
+                  content: `المد اللازم: هو ما جاء بعد حرف المد سكون أصلي، أي لا يزول في حالتي الوقف والوصل.
+مقداره: ست حركات وجوباً.`,
+                  examples: ["الضَّالِّينَ ← ياء مد ثم لام مشددة (السكون أصلي)", "حَاجَّ ← ألف مد ثم جيم مشددة"],
+                  summary: "المد اللازم: سكون أصلي بعد حرف مد، مقداره 6 حركات وجوباً",
+                  quiz: [
+                    { q: "ما مقدار المد اللازم؟", a: "ست حركات", choices: ["حركتان", "أربع حركات", "خمس حركات", "ست حركات"] }
+                  ]
+                },
+                {
+                  id: "lesson-9",
+                  number: 9,
+                  title: "المد اللازم الكلمي",
+                  page: 52,
+                  objectives: [
+                    "أعرف المد اللازم الكلمي وأنواعه",
+                    "أعطي أمثلة عليه من القرآن"
+                  ],
+                  content: `المد اللازم الكلمي: هو الذي يكون في الكلمات، ويكون السكون الأصلي في الكلمة نفسها.
+ينقسم إلى:
+- مخفف: إذا كان الحرف بعد المد ساكناً مخففاً (غير مشدد).
+- مثقل: إذا كان الحرف بعد المد ساكناً مشدداً.`,
+                  examples: ["آلآن ← مد لازم كلمي مخفف", "الضَّالِّينَ ← مد لازم كلمي مثقل"],
+                  summary: "المد اللازم الكلمي نوعان: مخفف (سكون خفيف) ومثقل (سكون مشدد)",
+                  quiz: [
+                    { q: "في كلمة (الضَّالِّينَ) المد اللازم من نوع؟", a: "كلمي مثقل", choices: ["كلمي مخفف", "كلمي مثقل", "حرفي مخفف", "حرفي مثقل"] }
+                  ]
+                },
+                {
+                  id: "lesson-10",
+                  number: 10,
+                  title: "المد اللازم الحرفي",
+                  page: 57,
+                  objectives: [
+                    "أعرف المد اللازم الحرفي",
+                    "أميزه من المد اللازم الكلمي"
+                  ],
+                  content: `المد اللازم الحرفي: هو الذي يكون في الحروف المقطعة في أوائل بعض السور.
+وهو الحروف التي يُهجى بها ويكون في الحرف الأوسط منها مد، ثم يأتي بعده سكون.
+مثل: الم، الر، المر.`,
+                  examples: ["الم ← لام (لا-م)، الأوسط ألف مد ثم سكون", "الر ← لام (لا-م)، الأوسط ألف مد ثم سكون"],
+                  summary: "المد اللازم الحرفي يكون في الحروف المقطعة أوائل السور",
+                  quiz: [
+                    { q: "أين يوجد المد اللازم الحرفي؟", a: "في الحروف المقطعة أوائل السور", choices: ["في وسط السور", "في الحروف المقطعة أوائل السور", "في نهاية السور", "في كل الكلمات"] }
+                  ]
+                },
+                {
+                  id: "lesson-11",
+                  number: 11,
+                  title: "درس تطبيقي شامل لأنواع المدود",
+                  page: 62,
+                  objectives: [
+                    "أطبق جميع أنواع المد تطبيقاً عملياً",
+                    "أميز بين أنواع المدود في النص القرآني",
+                    "أتقن التلاوة بمراعاة أحكام المد"
+                  ],
+                  content: `في هذا الدرس التطبيقي نراجع جميع أنواع المد:
+١- المد الطبيعي: حركتان ← مثال: قَالَ
+٢- المد المتصل: 4-5 حركات واجب ← مثال: جَاءَ
+٣- المد المنفصل: 2-5 حركات جائز ← مثال: إِنَّا أَعْطَيْنَا
+٤- المد العارض للسكون: 2-4-6 حركات عند الوقف ← مثال: نَسْتَعِينُ
+٥- المد اللازم: 6 حركات واجب ← مثال: الضَّالِّينَ`,
+                  examples: ["آية الكرسي تحتوي أنواعاً متعددة من المد", "سورة الفاتحة تحتوي على المد الطبيعي والعارض واللازم"],
+                  summary: "مراجعة شاملة لجميع أنواع المد مع التطبيق العملي على الآيات القرآنية",
+                  quiz: [
+                    { q: "ما نوع المد في (جَاءَ)؟", a: "مد متصل", choices: ["مد طبيعي", "مد متصل", "مد منفصل", "مد لازم"] },
+                    { q: "ما مقدار المد في (الضَّالِّينَ)؟", a: "ست حركات", choices: ["حركتان", "أربع حركات", "خمس حركات", "ست حركات"] },
+                    { q: "المد العارض للسكون يكون؟", a: "عند الوقف فقط", choices: ["دائماً", "عند الوقف فقط", "عند الوصل فقط", "في بداية الكلام"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // ============================
+    // الكتاب الثاني: الدراسات الإسلامية
+    // ============================
+    {
+      id: "islamic",
+      title: "الدراسات الإسلامية",
+      subtitle: "الصف السادس الابتدائي",
+      grade: "السادس الابتدائي",
+      icon: "🕌",
+      color: "#E91E8C",
+      coverColor: "#B0136A",
+      totalLessons: 30,
+      units: [
+        {
+          id: "islamic-part1",
+          title: "الجزء الأول من المقرر",
+          chapters: [
+            {
+              id: "tawheed-1",
+              title: "التوحيد",
+              icon: "☀️",
+              sections: [
+                {
+                  title: "الإيمان",
+                  lessons: [
+                    {
+                      id: "iman-1",
+                      number: 1,
+                      title: "الإيـمانُ",
+                      page: 16,
+                      objectives: ["أعرف تعريف الإيمان", "أعدد أركان الإيمان", "أبين أهمية الإيمان في حياة المسلم"],
+                      content: `الإيمان في اللغة: التصديق.
+الإيمان في الاصطلاح: هو التصديق بالقلب، والإقرار باللسان، والعمل بالجوارح.
+أركان الإيمان الستة:
+١- الإيمان بالله
+٢- الإيمان بالملائكة
+٣- الإيمان بالكتب
+٤- الإيمان بالرسل
+٥- الإيمان باليوم الآخر
+٦- الإيمان بالقدر خيره وشره`,
+                      examples: ["المؤمن يصدق بقلبه ويقر بلسانه ويعمل بجوارحه", "الإيمان يزيد بالطاعة وينقص بالمعصية"],
+                      summary: "الإيمان: تصديق وإقرار وعمل، وله ستة أركان",
+                      quiz: [
+                        { q: "ما تعريف الإيمان في الاصطلاح؟", a: "التصديق بالقلب والإقرار باللسان والعمل بالجوارح", choices: ["التصديق بالقلب فقط", "التصديق بالقلب والإقرار باللسان والعمل بالجوارح", "الإقرار باللسان فقط", "العمل بالجوارح فقط"] },
+                        { q: "كم عدد أركان الإيمان؟", a: "ستة", choices: ["أربعة", "خمسة", "ستة", "سبعة"] }
+                      ]
+                    },
+                    {
+                      id: "iman-2",
+                      number: 2,
+                      title: "شُعَبُ الإيمان",
+                      page: 20,
+                      objectives: ["أعرف معنى شعب الإيمان", "أعدد أهم شعب الإيمان", "أطبق شعب الإيمان في حياتي"],
+                      content: `شعب الإيمان: هي الأعمال والأخلاق التي تصدر عن المؤمن بسبب إيمانه.
+قال النبي ﷺ: "الإيمان بضع وسبعون شعبة، أعلاها قول لا إله إلا الله، وأدناها إماطة الأذى عن الطريق".
+أبرز شعب الإيمان:
+- العبادات: كالصلاة والصيام والزكاة
+- الأخلاق: كالصدق والأمانة والحياء
+- معاملة الخلق: كالرفق بهم وإزالة الأذى عن الطريق`,
+                      examples: ["إزالة الأذى عن الطريق شعبة من شعب الإيمان", "الحياء شعبة من شعب الإيمان"],
+                      summary: "شعب الإيمان: أعمال وأخلاق تزيد الإيمان، أعلاها التوحيد وأدناها إزالة الأذى",
+                      quiz: [
+                        { q: "ما أدنى شعب الإيمان؟", a: "إماطة الأذى عن الطريق", choices: ["الصلاة", "الصيام", "إماطة الأذى عن الطريق", "قول بسم الله"] }
+                      ]
+                    },
+                    {
+                      id: "iman-3",
+                      number: 3,
+                      title: "نواقضُ الإيمانِ ومُنقِصاتُه",
+                      page: 24,
+                      objectives: ["أعرف نواقض الإيمان", "أبين منقصات الإيمان", "أحذر من الوقوع فيها"],
+                      content: `نواقض الإيمان: الأشياء التي تُبطل الإيمان كلياً.
+من أبرزها:
+- الكفر بالله أو بأحد أركان الإيمان
+- الاستهزاء بالدين أو بشعائره
+- السحر وتعلمه والتعامل به
+
+منقصات الإيمان: الأشياء التي تُضعف الإيمان دون أن تبطله.
+من أبرزها:
+- ارتكاب الذنوب والمعاصي
+- التقصير في الفرائض
+- الغفلة عن ذكر الله`,
+                      examples: ["الكفر بالله ناقض للإيمان", "التقصير في الصلاة منقص للإيمان"],
+                      summary: "النواقض تبطل الإيمان كلياً، والمنقصات تضعفه دون إبطاله",
+                      quiz: [
+                        { q: "ما الفرق بين ناقض الإيمان ومنقصه؟", a: "الناقض يبطل الإيمان كلياً والمنقص يضعفه", choices: ["لا فرق", "الناقض يبطل الإيمان كلياً والمنقص يضعفه", "المنقص أشد", "كلاهما يبطل الإيمان"] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  title: "الشرك",
+                  lessons: [
+                    {
+                      id: "shirk-1",
+                      number: 4,
+                      title: "معنى الشِّركِ",
+                      page: 28,
+                      objectives: ["أعرف معنى الشرك", "أبين خطورة الشرك", "أتجنب أسبابه"],
+                      content: `الشرك: هو جعل شريك لله في شيء من خصائصه كالعبادة والتوكل والرجاء والخوف.
+الشرك أعظم الذنوب وأكبرها، قال تعالى: {إِنَّ اللَّهَ لَا يَغْفِرُ أَن يُشْرَكَ بِهِ وَيَغْفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَاءُ}.`,
+                      examples: ["الشرك بالله لا يغفره الله إلا بالتوبة", "من أشرك بالله حبط عمله"],
+                      summary: "الشرك: اتخاذ شريك لله، وهو أعظم الذنوب وأكبرها",
+                      quiz: [
+                        { q: "ما موقف الإسلام من الشرك؟", a: "هو أعظم الذنوب وأكبرها", choices: ["ذنب صغير", "هو أعظم الذنوب وأكبرها", "مباح في بعض الحالات", "خطأ بسيط"] }
+                      ]
+                    },
+                    {
+                      id: "shirk-2",
+                      number: 5,
+                      title: "أنواعُ الشِّركِ",
+                      page: 31,
+                      objectives: ["أعرف أنواع الشرك", "أميز بين الشرك الأكبر والأصغر"],
+                      content: `الشرك نوعان:
+١- الشرك الأكبر: ما يُخرج صاحبه من ملة الإسلام، كعبادة الأصنام والكواكب والأضرحة.
+٢- الشرك الأصغر: ما لا يُخرج من الملة لكنه ذريعة للأكبر، كالرياء والحلف بغير الله.`,
+                      examples: ["عبادة الأصنام: شرك أكبر", "الرياء في العبادة: شرك أصغر"],
+                      summary: "الشرك نوعان: أكبر (يخرج من الملة) وأصغر (لا يخرج منها لكنه خطير)",
+                      quiz: [
+                        { q: "الرياء في العبادة نوع من؟", a: "الشرك الأصغر", choices: ["الشرك الأكبر", "الشرك الأصغر", "ليس شركاً", "كفر"] }
+                      ]
+                    },
+                    {
+                      id: "shirk-3",
+                      number: 6,
+                      title: "مظاهرُ الشِّركِ",
+                      page: 34,
+                      objectives: ["أتعرف على مظاهر الشرك في المجتمع", "أتجنب هذه المظاهر"],
+                      content: `من مظاهر الشرك المنتشرة:
+- التمائم والحجب: تعليق الخرز والحجب دفعاً للعين والحسد
+- الكهانة والعرافة: تصديق من يدعي معرفة الغيب
+- السحر: طلب السحر والتعامل مع السحرة
+- التبرك بالأشجار والأحجار والقبور`,
+                      examples: ["تعليق التمائم لدفع الضرر شرك إذا اعتقد تأثيرها", "تصديق المنجمين في معرفة الغيب شرك"],
+                      summary: "مظاهر الشرك كثيرة منها: التمائم والكهانة والسحر والتبرك بغير الله",
+                      quiz: [
+                        { q: "تعليق التمائم اعتقاداً أنها تدفع الضرر هو؟", a: "شرك", choices: ["مباح", "مستحب", "شرك", "مكروه فقط"] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  title: "البدع والذنوب والمعاصي",
+                  lessons: [
+                    {
+                      id: "bida-1",
+                      number: 7,
+                      title: "البِدَعُ",
+                      page: 38,
+                      objectives: ["أعرف تعريف البدعة", "أبين خطر البدع", "أميز بين الابتكار والبدعة"],
+                      content: `البدعة في الدين: ما أُحدث في الدين مما لا أصل له يستند إليه.
+قال النبي ﷺ: "كل محدثة بدعة، وكل بدعة ضلالة، وكل ضلالة في النار".
+البدعة تشمل: إحداث عبادات لم يشرعها الله، أو زيادة في العبادات المشروعة بكيفية أو وقت أو عدد لم يرد فيه دليل.`,
+                      examples: ["إقامة احتفالات دينية بدون دليل شرعي بدعة", "الابتكار في أمور الدنيا ليس بدعة"],
+                      summary: "البدعة: إحداث ما ليس له أصل في الدين، وهي ضلالة",
+                      quiz: [
+                        { q: "ما حكم البدعة في الدين؟", a: "ضلالة", choices: ["مباحة", "مستحبة", "ضلالة", "واجبة"] }
+                      ]
+                    },
+                    {
+                      id: "bida-2",
+                      number: 8,
+                      title: "الذُّنوبُ والمَعاصي",
+                      page: 40,
+                      objectives: ["أفرق بين الكبائر والصغائر", "أعرف آثار الذنوب", "أسعى للتوبة منها"],
+                      content: `الذنوب نوعان:
+١- الكبائر: هي الذنوب التي رتب عليها الشرع عقوبة خاصة أو لعن أو غضب.
+من الكبائر: الشرك، والقتل، والزنا، والربا، وعقوق الوالدين.
+
+٢- الصغائر: هي الذنوب التي لم يرتب عليها الشرع ذلك، وتُكفَّر بالمحافظة على الفرائض.
+
+آثار الذنوب:
+- ضعف الإيمان والقسوة
+- الحرمان من بركات الله
+- الهم والضيق في الدنيا والعذاب في الآخرة`,
+                      examples: ["الشرك بالله كبيرة من أكبر الكبائر", "النميمة ذنب خطير يُفسد العلاقات"],
+                      summary: "الذنوب نوعان: كبائر ذات عقوبة خاصة، وصغائر تُكفَّر بالطاعات",
+                      quiz: [
+                        { q: "من أكبر الكبائر؟", a: "الشرك بالله", choices: ["الكذب", "الغيبة", "الشرك بالله", "النميمة"] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  title: "منهج المسلم في الاعتقاد",
+                  lessons: [
+                    {
+                      id: "manhaj-1",
+                      number: 9,
+                      title: "منهجُ أهل السنة والجماعة في العقيدة",
+                      page: 44,
+                      objectives: ["أتعرف على منهج أهل السنة في العقيدة", "أبين أهمية الرجوع للكتاب والسنة"],
+                      content: `أهل السنة والجماعة: هم الذين اتبعوا سنة النبي ﷺ وما كان عليه الصحابة الكرام.
+منهجهم في العقيدة:
+- التسليم للنصوص الشرعية من الكتاب والسنة
+- إثبات ما أثبته الله لنفسه وما أثبته له رسوله ﷺ
+- نفي ما نفاه الله عن نفسه وما نفاه عنه رسوله ﷺ
+- عدم الخوض في المتشابهات`,
+                      examples: ["أهل السنة يثبتون صفات الله كما وردت دون تحريف أو تعطيل"],
+                      summary: "أهل السنة والجماعة: يتبعون الكتاب والسنة في العقيدة دون زيادة أو نقصان",
+                      quiz: [
+                        { q: "من هم أهل السنة والجماعة؟", a: "الذين اتبعوا سنة النبي ﷺ وما كان عليه الصحابة", choices: ["كل المسلمين", "الذين اتبعوا سنة النبي ﷺ وما كان عليه الصحابة", "العلماء فقط", "السلف فقط"] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "hadeeth-1",
+              title: "الحديث والسيرة",
+              icon: "📜",
+              sections: [
+                {
+                  title: "هَدْيُ النَّبيِّ ﷺ في معاملة الصِّغارِ والأقاربِ والأصحابِ والجيران",
+                  lessons: [
+                    { id: "hadeeth-s1-l1", number: 1, title: "رحمةُ النَّبيِّ ﷺ للصِّغارِ وملاطفتُه لهم", page: 50,
+                      objectives: ["أعرف هدي النبي ﷺ في معاملة الأطفال", "أقتدي بالنبي ﷺ في رحمته بالصغار"],
+                      content: "كان النبي ﷺ رحيماً بالأطفال، يداعبهم ويقبّلهم ويحملهم. قال ﷺ: 'ليس منا من لم يرحم صغيرنا'. وكان يدعو لهم ويبرك عليهم ويتفقد أحوالهم.",
+                      examples: ["كان ﷺ يُجلس الحسن والحسين على ركبتيه", "كان ﷺ يُسلم على الأطفال في الطريق"],
+                      summary: "النبي ﷺ كان قدوة في الرحمة بالأطفال ومداعبتهم وملاطفتهم",
+                      quiz: [{ q: "ما هدي النبي ﷺ مع الأطفال؟", a: "الرحمة والملاطفة والدعاء لهم", choices: ["الشدة معهم", "الرحمة والملاطفة والدعاء لهم", "تجاهلهم", "العقاب"] }] },
+                    { id: "hadeeth-s1-l2", number: 2, title: "دعاؤه ﷺ للصِّغارِ وتَشجيعُهُم على العمل", page: 53,
+                      objectives: ["أعرف كيف كان النبي ﷺ يشجع الصغار", "أطبق ذلك في تعاملي مع الأطفال"],
+                      content: "كان النبي ﷺ يدعو للأطفال ويشجعهم على تعلم العلم والعمل الصالح. روى ابن عباس رضي الله عنه أن النبي ﷺ كان يدعو له بقوله: 'اللهم فقهه في الدين وعلمه التأويل'.",
+                      examples: ["دعاء النبي ﷺ لابن عباس بالفقه في الدين", "تشجيعه ﷺ للأطفال على تعلم القرآن"],
+                      summary: "النبي ﷺ كان يشجع الصغار بالدعاء لهم وتحفيزهم على العلم والعمل",
+                      quiz: [{ q: "بماذا دعا النبي ﷺ لابن عباس؟", a: "اللهم فقهه في الدين وعلمه التأويل", choices: ["اللهم ارزقه المال", "اللهم فقهه في الدين وعلمه التأويل", "اللهم شفاه", "اللهم طل عمره"] }] },
+                    { id: "hadeeth-s1-l3", number: 3, title: "الرحمةُ بالصَّغيرِ وتَقديرُ الكَبير", page: 55,
+                      objectives: ["أقدر أهمية احترام الكبار والرحمة بالصغار"],
+                      content: "قال النبي ﷺ: 'ليس منا من لم يرحم صغيرنا ويوقر كبيرنا'. هذا التوازن في التعامل بين الرحمة بالأصغر والتوقير للأكبر هو من صميم الأخلاق الإسلامية.",
+                      examples: ["رحمة الصغير: الملاطفة والدعاء", "توقير الكبير: تقديمه في المجالس والكلام"],
+                      summary: "من أخلاق المسلم: رحمة الصغير وتوقير الكبير",
+                      quiz: [{ q: "ما الحديث الذي يجمع بين الرحمة بالصغير وتوقير الكبير؟", a: "ليس منا من لم يرحم صغيرنا ويوقر كبيرنا", choices: ["الدين النصيحة", "ليس منا من لم يرحم صغيرنا ويوقر كبيرنا", "خيركم من تعلم القرآن وعلمه", "المسلم أخو المسلم"] }] },
+                    { id: "hadeeth-s1-l4", number: 4, title: "مَحبَّتُه ﷺ لذَوي رَحِمِه ودعوتُهم للخير", page: 57,
+                      objectives: ["أعرف هدي النبي ﷺ في صلة الرحم"],
+                      content: "كان النبي ﷺ يصل رحمه ويحرص على دعوتهم للإسلام وهدايتهم. ومن أبرز ذلك حرصه على عمه أبي طالب ودعاؤه له بالهداية.",
+                      examples: ["حرص النبي ﷺ على هداية عمه أبي طالب", "اهتمامه ﷺ بذوي رحمه في مكة"],
+                      summary: "النبي ﷺ كان يحرص على صلة الرحم ودعوة أقاربه للخير",
+                      quiz: [{ q: "ما هدي النبي ﷺ مع ذوي رحمه؟", a: "صلتهم ودعوتهم للخير والهداية", choices: ["تركهم", "صلتهم ودعوتهم للخير والهداية", "الابتعاد عنهم", "مجاملتهم فقط"] }] },
+                    { id: "hadeeth-s1-l5", number: 5, title: "من فضائلِ صِلةِ الرَّحِم", page: 61,
+                      objectives: ["أعرف فضائل صلة الرحم", "أحرص على صلة أرحامي"],
+                      content: "فضائل صلة الرحم:\n- زيادة الرزق\n- البركة في العمر\n- محبة الله ورضاه\n- قال ﷺ: 'من أحب أن يُبسط له في رزقه ويُنسأ له في أثره فليصل رحمه'",
+                      examples: ["صلة الرحم تبسط الرزق وتطيل العمر", "قطيعة الرحم سبب للعقوبة في الدنيا والآخرة"],
+                      summary: "صلة الرحم لها فضائل عظيمة: زيادة الرزق والعمر ورضا الله",
+                      quiz: [{ q: "ما من فضائل صلة الرحم؟", a: "البسط في الرزق والبركة في العمر", choices: ["النوم الكثير", "البسط في الرزق والبركة في العمر", "القوة الجسدية", "الشهرة"] }] },
+                    { id: "hadeeth-s1-l6", number: 6, title: "تَواضُعُه ﷺ وبَشاشتُه مع جُلَسائِه", page: 63,
+                      objectives: ["أعرف هدي النبي ﷺ في التواضع مع الناس"],
+                      content: "كان النبي ﷺ أشد الناس تواضعاً. كان يجلس مع الفقراء والمساكين ويأكل معهم. وكانت وجهه دائماً مبتسمة مع جلسائه، يبدأهم بالسلام ويعطيهم اهتمامه.",
+                      examples: ["كان ﷺ يجلس حيث انتهى به المجلس", "كان يبتسم في وجوه أصحابه ويبدأهم بالسلام"],
+                      summary: "النبي ﷺ قدوة في التواضع والبشاشة والمحبة مع الجلساء",
+                      quiz: [{ q: "كيف كان النبي ﷺ مع جلسائه؟", a: "متواضعاً بشاشاً يبدأهم بالسلام", choices: ["متكبراً", "متواضعاً بشاشاً يبدأهم بالسلام", "صامتاً دائماً", "يتجنبهم"] }] },
+                    { id: "hadeeth-s1-l7", number: 7, title: "من آدابِ المَجلِس", page: 66,
+                      objectives: ["أتعلم آداب الجلوس والمجالس الإسلامية"],
+                      content: "من آداب المجلس:\n- إفساح المجال للقادم\n- إلقاء السلام عند الدخول والخروج\n- عدم الجلوس بين اثنين بغير إذنهما\n- الإنصات للمتحدث\n- عدم الغيبة والنميمة في المجلس\n- الدعاء عند القيام",
+                      examples: ["إفساح المجلس للقادم أدب إسلامي", "الدعاء الذي يُقال عند القيام من المجلس"],
+                      summary: "المجالس الإسلامية لها آداب تجمع بين الاحترام والمحبة والذكر",
+                      quiz: [{ q: "من آداب المجلس الإسلامي؟", a: "إلقاء السلام والإنصات وعدم الغيبة", choices: ["الصمت التام", "إلقاء السلام والإنصات وعدم الغيبة", "الكلام الكثير", "الانفراد دائماً"] }] },
+                    { id: "hadeeth-s1-l8", number: 8, title: "هَديُّ النَّبيِّ ﷺ في تَعامُلِه مع جيرانِه", page: 68,
+                      objectives: ["أعرف حق الجار في الإسلام", "أطبق هدي النبي ﷺ مع الجيران"],
+                      content: "قال النبي ﷺ: 'ما زال جبريل يوصيني بالجار حتى ظننت أنه سيورثه'.\nمن حقوق الجار:\n- كف الأذى عنه\n- السلام عليه\n- عيادته إن مرض\n- مساعدته عند الحاجة\n- إدخال السرور عليه",
+                      examples: ["إهداء الجار من طعامك سنة نبوية", "كف الأذى عن الجار واجب"],
+                      summary: "النبي ﷺ حث على الإحسان للجيران وأعطاهم حقوقاً كثيرة",
+                      quiz: [{ q: "ما من حقوق الجار في الإسلام؟", a: "كف الأذى والسلام والمساعدة عند الحاجة", choices: ["لا حقوق له", "كف الأذى والسلام والمساعدة عند الحاجة", "الهدايا فقط", "السلام فقط"] }] }
+                  ]
+                },
+                {
+                  title: "هَدْيُ النَّبيِّ ﷺ في معاملةِ القائمينَ على قضاءِ حوائجِه والعُمَّالِ والضُّيوف",
+                  lessons: [
+                    { id: "hadeeth-s2-l1", number: 9, title: "هَديُّ النَّبيِّ ﷺ في مُعاملةِ القائمينَ على قَضاءِ حوائجِه", page: 72,
+                      objectives: ["أعرف هدي النبي ﷺ مع خدمه وأتباعه"],
+                      content: "كان النبي ﷺ يُحسن معاملة من يخدمونه ويقضون حوائجه. قال أنس بن مالك رضي الله عنه: 'خدمت النبي ﷺ عشر سنين فما قال لي أف قط، ولا قال لشيء فعلته لم فعلته، ولا لشيء لم أفعله ألا فعلته'.",
+                      examples: ["قول أنس: خدمته عشر سنين ولم يقل لي أف", "معاملته ﷺ لخدمه بالرفق والإحسان"],
+                      summary: "النبي ﷺ قدوة في الرفق بالخدم وحسن معاملتهم",
+                      quiz: [{ q: "كم سنة خدم أنس النبيَّ ﷺ؟", a: "عشر سنين", choices: ["خمس سنين", "عشر سنين", "خمس عشرة سنة", "ثلاث سنين"] }] },
+                    { id: "hadeeth-s2-l2", number: 10, title: "نهيُ النَّبيِّ ﷺ عن مَنعِ الأجيرِ أجرَته", page: 76,
+                      objectives: ["أعرف حقوق العمال في الإسلام"],
+                      content: "قال النبي ﷺ: 'أعطوا الأجير أجره قبل أن يجف عرقه'. وقال: 'ثلاثة أنا خصمهم يوم القيامة... ورجل استأجر أجيراً فاستوفى منه ولم يعطه أجره'.",
+                      examples: ["أداء الأجر قبل جفاف عرق العامل", "ظلم العامل من كبائر الذنوب"],
+                      summary: "الإسلام يوجب إعطاء العمال حقوقهم في وقتها",
+                      quiz: [{ q: "متى يجب إعطاء الأجير أجره؟", a: "قبل أن يجف عرقه", choices: ["بعد أسبوع", "قبل أن يجف عرقه", "في نهاية الشهر", "عند المطالبة"] }] },
+                    { id: "hadeeth-s2-l3", number: 11, title: "هَديُّ النَّبيِّ ﷺ في التَّعامل مع الوُفود والضُّيوف", page: 79,
+                      objectives: ["أعرف هدي النبي ﷺ في إكرام الضيف"],
+                      content: "إكرام الضيف من شعائر الإسلام وأخلاق الكرام. قال ﷺ: 'من كان يؤمن بالله واليوم الآخر فليُكرم ضيفه'. وكان النبي ﷺ يستقبل الوفود بنفسه ويُكرمهم ويُجيب دعواتهم.",
+                      examples: ["استقبال النبي ﷺ لوفد عبد القيس", "حثه ﷺ على إكرام الضيف"],
+                      summary: "إكرام الضيف واجب إسلامي، والنبي ﷺ كان قدوة في ذلك",
+                      quiz: [{ q: "ما حكم إكرام الضيف في الإسلام؟", a: "واجب من إيمان المسلم", choices: ["مستحب فقط", "واجب من إيمان المسلم", "مباح", "مكروه"] }] }
+                  ]
+                },
+                {
+                  title: "هَدْيُ النَّبيِّ ﷺ مع غير المسلمين",
+                  lessons: [
+                    { id: "hadeeth-s3-l1", number: 12, title: "هَدْيُ النَّبيِّ ﷺ في التَّعامل مع غير المسلمين", page: 84,
+                      objectives: ["أتعرف على هدي النبي ﷺ في التعامل مع غير المسلمين"],
+                      content: "أقر الإسلام حسن التعامل مع غير المسلمين في ما لا يُعارض شريعة الإسلام. فقد كان النبي ﷺ يتعامل مع أهل الكتاب والمشركين بالعدل والإنصاف في أمور البيع والشراء والمعاهدات.",
+                      examples: ["اشترى النبي ﷺ من يهودي بالدَّيْن", "أحسن معاملة أهل الذمة الذين عاشوا في ظل الدولة الإسلامية"],
+                      summary: "الإسلام يُجيز العدل والإنصاف مع غير المسلمين في أمور الدنيا",
+                      quiz: [{ q: "ما هدي النبي ﷺ في التعامل مع غير المسلمين؟", a: "العدل والإنصاف فيما لا يخالف الشريعة", choices: ["القسوة عليهم", "العدل والإنصاف فيما لا يخالف الشريعة", "تجنبهم كلياً", "مجاملتهم بكل شيء"] }] },
+                    { id: "hadeeth-s3-l2", number: 13, title: "صِلَةُ الوالدينِ غير المسلمين", page: 88,
+                      objectives: ["أعرف حكم صلة الوالدين غير المسلمين"],
+                      content: "أمر الإسلام ببر الوالدين حتى لو كانوا غير مسلمين. قال تعالى: {وَإِن جَاهَدَاكَ عَلَىٰ أَن تُشْرِكَ بِي مَا لَيْسَ لَكَ بِهِ عِلْمٌ فَلَا تُطِعْهُمَا وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا}. وقد سألت أسماء بنت أبي بكر النبيَّ ﷺ عن صلة أمها المشركة فأذن لها.",
+                      examples: ["صلة أسماء لأمها المشركة بإذن النبي ﷺ", "صلة الوالدين غير المسلمين في الدنيا واجبة مع عدم طاعتهم في المعصية"],
+                      summary: "صلة الوالدين غير المسلمين واجبة في أمور الدنيا مع عدم طاعتهم في معصية الله",
+                      quiz: [{ q: "ما حكم صلة الوالدين غير المسلمين؟", a: "واجبة في أمور الدنيا مع عدم طاعتهم في معصية الله", choices: ["محرمة", "واجبة في أمور الدنيا مع عدم طاعتهم في معصية الله", "مستحبة فقط", "لا حكم لها"] }] }
+                  ]
+                },
+                {
+                  title: "هَدْيُ النَّبيِّ ﷺ في التعامل مع الحيوان",
+                  lessons: [
+                    { id: "hadeeth-s4-l1", number: 14, title: "إحسانُ النَّبيِّ ﷺ إلى الحيوان", page: 92,
+                      objectives: ["أعرف حق الحيوان في الإسلام", "أحرص على الرفق بالحيوانات"],
+                      content: "الإسلام دين الرحمة بكل المخلوقات. قال ﷺ: 'في كل ذات كبد رطبة أجر'. ونهى النبي ﷺ عن تعذيب الحيوانات واللعب بها وعن قتل ما لا يُؤذي منها.\nكما أمر بحسن الذبح فقال: 'إن الله كتب الإحسان على كل شيء، فإذا قتلتم فأحسنوا القِتلة، وإذا ذبحتم فأحسنوا الذِّبحة'.",
+                      examples: ["قصة المرأة التي عذبت القطة فدخلت النار", "قصة الرجل الذي سقى الكلب فشكر الله له فغفر له"],
+                      summary: "الإسلام يوجب الرفق بالحيوانات والإحسان إليها",
+                      quiz: [{ q: "ما موقف الإسلام من الرفق بالحيوانات؟", a: "واجب وله أجر عظيم", choices: ["لا أهمية له", "واجب وله أجر عظيم", "مكروه", "مستحب فقط"] }] }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "fiqh-1",
+              title: "الفقه",
+              icon: "⚖️",
+              sections: [
+                {
+                  title: "صلاةُ الجمعة",
+                  lessons: [
+                    { id: "fiqh-jumuah-1", number: 1, title: "حكمُ صلاةِ الجمعة وصِفَتُها", page: 100,
+                      objectives: ["أعرف حكم صلاة الجمعة", "أتعلم كيفية أداء صلاة الجمعة"],
+                      content: "صلاة الجمعة: فريضة واجبة على كل مسلم ذكر بالغ عاقل حر مقيم.\nدليلها: قوله تعالى: {يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ}\nصفتها: ركعتان يجهر فيهما الإمام بالقراءة، وتسبقهما خطبتان.",
+                      examples: ["من فاتته الجمعة بغير عذر استوجب الإثم", "من أدرك ركعة مع الإمام فقد أدرك الجمعة"],
+                      summary: "صلاة الجمعة فريضة على الذكور البالغين المقيمين، وتُصلى ركعتين بعد خطبتين",
+                      quiz: [{ q: "ما حكم صلاة الجمعة؟", a: "فريضة واجبة", choices: ["سنة مؤكدة", "فريضة واجبة", "مستحبة", "مباحة"] }] },
+                    { id: "fiqh-jumuah-2", number: 2, title: "مُستَحَباتُ الجمعة", page: 103,
+                      objectives: ["أعرف مستحبات يوم الجمعة", "أحرص على تطبيقها"],
+                      content: "من مستحبات الجمعة:\n- الاغتسال قبلها\n- التطيب ولبس أحسن الثياب\n- التبكير إلى المسجد\n- قراءة سورة الكهف\n- الإكثار من الصلاة على النبي ﷺ\n- الدعاء في الساعة الأخيرة من يوم الجمعة",
+                      examples: ["الغسل يوم الجمعة سنة مؤكدة", "قراءة سورة الكهف يوم الجمعة من السنن"],
+                      summary: "ليوم الجمعة مستحبات كثيرة ينبغي للمسلم الحرص عليها",
+                      quiz: [{ q: "ما من مستحبات يوم الجمعة؟", a: "الاغتسال والتبكير وقراءة سورة الكهف", choices: ["النوم كثيراً", "الاغتسال والتبكير وقراءة سورة الكهف", "ترك العمل كله", "الصيام وجوباً"] }] }
+                  ]
+                },
+                {
+                  title: "الحكمةُ من مَشروعيَّةِ العيدِ وصلاةُ العيدين",
+                  lessons: [
+                    { id: "fiqh-eid-1", number: 3, title: "الحكمةُ مِنْ مَشروعيَّةِ العيد", page: 108,
+                      objectives: ["أعرف حكمة مشروعية العيد في الإسلام"],
+                      content: "العيد في الإسلام يعبر عن فرح المسلمين بإتمام العبادة وانتهائها على خير. والأعياد في الإسلام اثنان: عيد الفطر بعد رمضان، وعيد الأضحى مع الحج. وفيهما يجتمع المسلمون على العبادة والفرح والتواصل.",
+                      examples: ["عيد الفطر: فرحة بإتمام الصيام", "عيد الأضحى: فرحة مرتبطة بالحج والتضحية"],
+                      summary: "العيد في الإسلام فرحة مرتبطة بإتمام العبادة، واجتماع المسلمين على الطاعة",
+                      quiz: [{ q: "كم عدد الأعياد في الإسلام؟", a: "اثنان", choices: ["واحد", "اثنان", "ثلاثة", "أربعة"] }] },
+                    { id: "fiqh-eid-2", number: 4, title: "صلاةُ العيدين", page: 110,
+                      objectives: ["أتعلم كيفية صلاة العيد", "أعرف حكمها"],
+                      content: "صلاة العيد ركعتان:\n- في الأولى: يكبر سبع تكبيرات بعد تكبيرة الإحرام\n- في الثانية: يكبر خمس تكبيرات قبل القراءة\nوتُصلى في المصلى (خارج المسجد غالباً)، ويخطب الإمام بعدها خطبتين.",
+                      examples: ["صلاة عيد الفطر في الصباح بعد الشروق", "صلاة عيد الأضحى بعد ذبح الأضاحي"],
+                      summary: "صلاة العيد ركعتان بتكبيرات زائدة، تُصلى في المصلى، وبعدها خطبتان",
+                      quiz: [{ q: "كم عدد تكبيرات الركعة الأولى في صلاة العيد؟", a: "سبع تكبيرات", choices: ["ثلاث", "خمس", "سبع تكبيرات", "تسع"] }] },
+                    { id: "fiqh-eid-3", number: 5, title: "سُنَنُ العيدين", page: 114,
+                      objectives: ["أعرف سنن يومَي العيد", "أحرص على تطبيقها"],
+                      content: "من سنن العيدين:\n- الاغتسال وارتداء أجمل الثياب\n- التكبير في ليلة العيد وصباحه\n- تناول التمرات قبل صلاة الفطر\n- الذهاب من طريق والعودة من طريق أخرى\n- تهنئة المسلمين بالعيد\n- صلة الأرحام وزيارة الأهل",
+                      examples: ["أكل التمر وتراً قبل صلاة عيد الفطر سنة", "التكبير ليلة وصباح العيد سنة"],
+                      summary: "للعيدين سنن كثيرة منها: الاغتسال والتكبير والتهنئة وصلة الأرحام",
+                      quiz: [{ q: "ما من سنن يوم عيد الفطر؟", a: "تناول التمرات قبل صلاة العيد", choices: ["الصيام قبله", "تناول التمرات قبل صلاة العيد", "ترك صلاة الفجر", "البقاء في البيت"] }] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // ============================
+    // الكتاب الثالث: تلاوة القرآن الكريم وتجويده
+    // ============================
+    {
+      id: "quran",
+      title: "تلاوة القرآن الكريم وتجويده",
+      subtitle: "الصف السادس الابتدائي",
+      grade: "السادس الابتدائي",
+      icon: "📿",
+      color: "#C2185B",
+      coverColor: "#880E4F",
+      totalLessons: 16,
+      units: [
+        {
+          id: "quran-part1",
+          title: "الجزء الأول من المقرر",
+          chapters: [
+            {
+              id: "quran-unit1",
+              title: "الوحدة الأولى",
+              lessons: [
+                { id: "q-u1-l1", number: 1, title: "التجويد: فضل تلاوة القرآن الكريم", page: 10,
+                  objectives: ["أعرف فضائل تلاوة القرآن الكريم", "أشجع نفسي على الإكثار من التلاوة"],
+                  content: `فضائل تلاوة القرآن الكريم:
+- قال النبي ﷺ: "اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعاً لأصحابه"
+- "من قرأ حرفاً من كتاب الله فله به حسنة والحسنة بعشر أمثالها"
+- القرآن يرفع درجة صاحبه ويشفع له يوم القيامة
+- يُنير الطريق ويُطمئن القلب`,
+                  examples: ["الحرف الواحد من القرآن بعشر حسنات", "القرآن شفيع لأصحابه يوم القيامة"],
+                  summary: "تلاوة القرآن من أفضل العبادات وله فضائل عظيمة في الدنيا والآخرة",
+                  quiz: [{ q: "ما ثواب من قرأ حرفاً من القرآن؟", a: "حسنة بعشر أمثالها", choices: ["حسنة واحدة", "حسنة بعشر أمثالها", "حسنتان", "مئة حسنة"] }] },
+                { id: "q-u1-l2", number: 2, title: "التلاوة: سورة ص من الآية (١) إلى الآية (٢٦)", page: 13,
+                  objectives: ["أتلو سورة ص من الآية (١) إلى (٢٦) تلاوة صحيحة", "أطبق أحكام التجويد في التلاوة"],
+                  content: "سورة ص مكية، وتبدأ بالحروف المقطعة (صٓ) وتتحدث عن عظمة القرآن وقصص الأنبياء.\nالآيات (١-٢٦) تشمل: الحروف المقطعة، والإقسام بالقرآن، وعجب الكفار من النبي، وقصة داود عليه السلام.",
+                  examples: ["بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ - صٓ وَالْقُرْآنِ ذِي الذِّكْرِ"],
+                  summary: "سورة ص مكية تتحدث عن القرآن وقصص الأنبياء من داود فأكثر",
+                  quiz: [{ q: "سورة ص مكية أم مدنية؟", a: "مكية", choices: ["مدنية", "مكية", "مختلف فيها", "لا يُعرف"] }] }
+              ]
+            },
+            {
+              id: "quran-unit2",
+              title: "الوحدة الثانية",
+              lessons: [
+                { id: "q-u2-l1", number: 3, title: "التجويد: فضل حفظ القرآن الكريم", page: 18,
+                  objectives: ["أعرف فضائل حفظ القرآن الكريم", "أشجع نفسي على حفظ المزيد من القرآن"],
+                  content: `فضائل حفظ القرآن:
+- "الماهر بالقرآن مع السفرة الكرام البررة"
+- حافظ القرآن يُكرم والداه يوم القيامة بتاج وحُلة
+- حامل القرآن حامل لراية الإسلام
+- القرآن رفيق حافظه في القبر والحشر`,
+                  examples: ["الماهر بالقرآن مع الملائكة", "والدا حافظ القرآن يُلبسان تاجاً يوم القيامة"],
+                  summary: "حفظ القرآن شرف عظيم له فضائل جليلة للحافظ ووالديه",
+                  quiz: [{ q: "ما جزاء الماهر بالقرآن؟", a: "مع السفرة الكرام البررة", choices: ["له جنة عدن", "مع السفرة الكرام البررة", "له ألف حسنة", "يُغفر له كل ذنب"] }] },
+                { id: "q-u2-l2", number: 4, title: "التجويد: فضائل بعض سور القرآن", page: 22,
+                  objectives: ["أعرف فضائل بعض سور القرآن", "أحرص على قراءة هذه السور"],
+                  content: `من فضائل السور:
+- سورة الفاتحة: أم الكتاب ولا صلاة إلا بها
+- سورة البقرة: لا يدخل بيتها الشيطان
+- آية الكرسي: أعظم آية في القرآن
+- سورة الكهف: من قرأها ليلة الجمعة أضاء الله له ما بينه وبين البيت العتيق
+- المعوذتان: يتعوذ بهما من كل شر`,
+                  examples: ["قراءة سورة البقرة تطرد الشيطان من البيت", "آية الكرسي أعظم آية في القرآن"],
+                  summary: "لكثير من سور القرآن فضائل خاصة ينبغي حفظها والحرص على تلاوتها",
+                  quiz: [{ q: "ما السورة التي يحمي قراءتها البيتَ من الشيطان؟", a: "سورة البقرة", choices: ["سورة الفاتحة", "سورة البقرة", "سورة الكهف", "سورة يس"] }] },
+                { id: "q-u2-l3", number: 5, title: "التلاوة: سورة ص من الآية (٢٧) إلى الآية (٦٦)", page: 28,
+                  objectives: ["أتلو سورة ص من الآية (٢٧) إلى (٦٦) بصحة وإتقان"],
+                  content: "الآيات (٢٧-٦٦) من سورة ص تشمل: رفض الباطل، وقصص أنبياء الله كسليمان وأيوب وإسحاق ويعقوب ويوسف، ثم ذكر عباد الله المخلصين ونعيمهم في الجنة.",
+                  examples: ["قصة سليمان عليه السلام في سورة ص", "قصة أيوب عليه السلام وصبره"],
+                  summary: "سورة ص (٢٧-٦٦) تتضمن قصص الأنبياء وعاقبة الصابرين",
+                  quiz: [{ q: "من الأنبياء المذكورين في هذه الآيات من سورة ص؟", a: "سليمان وأيوب", choices: ["موسى وهارون", "سليمان وأيوب", "إبراهيم وإسماعيل", "يحيى وزكريا"] }] }
+              ]
+            },
+            {
+              id: "quran-unit3",
+              title: "الوحدة الثالثة",
+              lessons: [
+                { id: "q-u3-l1", number: 6, title: "التجويد: المد - تعريفه وحروفه", page: 30,
+                  objectives: ["أعرف تعريف المد وحروفه", "أميز حروف المد في الكلمات"],
+                  content: "المد في اللغة: الزيادة والإطالة.\nحروف المد: الألف الساكنة المفتوح ما قبلها، والواو الساكنة المضموم ما قبلها، والياء الساكنة المكسور ما قبلها.",
+                  examples: ["قَالَ (مد بالألف)", "يَقُولُ (مد بالواو)", "قِيلَ (مد بالياء)"],
+                  summary: "المد: إطالة الصوت بحرف من حروفه الثلاثة: الألف أو الواو أو الياء",
+                  quiz: [{ q: "ما حروف المد؟", a: "الألف والواو والياء الساكنة", choices: ["الألف فقط", "الألف والواو", "الألف والواو والياء الساكنة", "كل الحروف"] }] },
+                { id: "q-u3-l2", number: 7, title: "التلاوة: من الآية (٦٧) سورة ص إلى الآية (٣٩) من سورة الصافات", page: 34,
+                  objectives: ["أتلو الآيات المقررة بصحة وإتقان"],
+                  content: "تشمل هذه التلاوة: ختام سورة ص (٦٧-٨٨) التي تتحدث عن حقيقة الرسالة والعاقبة، ثم بداية سورة الصافات (١-٣٩) التي تتحدث عن تسبيح الملائكة وعظمة الله.",
+                  examples: ["ختام سورة ص بالتنبيه على حقيقة الدعوة", "بداية الصافات بوصف الملائكة"],
+                  summary: "تلاوة آيات من ختام ص وبداية الصافات مع التطبيق الصحيح للتجويد",
+                  quiz: [{ q: "بماذا تبدأ سورة الصافات؟", a: "وصف الملائكة المصطفة", choices: ["ذكر القرآن", "وصف الملائكة المصطفة", "قصة إبراهيم", "حديث عن الجنة"] }] }
+              ]
+            },
+            {
+              id: "quran-unit4",
+              title: "الوحدة الرابعة",
+              lessons: [
+                { id: "q-u4-l1", number: 8, title: "التجويد: أقسام المد - الأصلي والفرعي", page: 38,
+                  objectives: ["أعرف أقسام المد الأصلي والفرعي", "أطبق كل نوع بمقداره الصحيح"],
+                  content: "المد قسمان:\n- الأصلي (الطبيعي): حركتان، لا سبب له من همز أو سكون.\n- الفرعي: زائد على الطبيعي بسبب الهمز أو السكون.",
+                  examples: ["مَالَ (مد أصلي حركتان)", "جَاءَ (مد فرعي بسبب الهمز)"],
+                  summary: "المد أصلي (حركتان) وفرعي (أكثر من حركتين بسبب همز أو سكون)",
+                  quiz: [{ q: "ما سبب المد الفرعي؟", a: "الهمز أو السكون", choices: ["الفتح فقط", "الهمز أو السكون", "التنوين", "الشدة"] }] },
+                { id: "q-u4-l2", number: 9, title: "التلاوة: سورة الصافات من الآية (٤٠) إلى الآية (٩٨)", page: 42,
+                  objectives: ["أتلو سورة الصافات من الآية (٤٠) إلى (٩٨) بإتقان"],
+                  content: "الآيات (٤٠-٩٨) تتضمن: وصف عباد الله المخلصين ونعيمهم، ثم قصة إبراهيم عليه السلام مع قومه وكسره للأصنام وإلقائه في النار وإنجاء الله له.",
+                  examples: ["نعيم عباد الله المخلصين في الجنة", "قصة إبراهيم وكسر الأصنام"],
+                  summary: "هذه الآيات تجمع بين وصف الجنة وقصة إبراهيم الخليل",
+                  quiz: [{ q: "ماذا فعل إبراهيم عليه السلام مع الأصنام؟", a: "كسرها", choices: ["عبدها", "كسرها", "أخفاها", "باعها"] }] }
+              ]
+            },
+            {
+              id: "quran-unit5",
+              title: "الوحدة الخامسة",
+              lessons: [
+                { id: "q-u5-l1", number: 10, title: "الحفظ: سورة القلم من الآية (١) إلى الآية (٣٣)", page: 46,
+                  objectives: ["أحفظ سورة القلم من الآية (١) إلى (٣٣)"],
+                  content: "سورة القلم مكية، وهي من أوائل ما نزل من القرآن الكريم.\nتتحدث عن: عظمة القلم والكتابة، ودفاع الله عن النبي ﷺ من اتهامات المشركين، وضرب المثل بأصحاب الجنة الطغاة وعقوبتهم.",
+                  examples: ["سورة القلم تبدأ بالقسم بالقلم", "تتحدث عن أخلاق النبي ﷺ العظيمة"],
+                  summary: "سورة القلم تحتفي بالكتابة وتدافع عن النبي ﷺ وتضرب مثل الطغاة",
+                  quiz: [{ q: "سورة القلم مكية أم مدنية؟", a: "مكية", choices: ["مدنية", "مكية", "مختلف فيها", "لا يُعرف"] }] }
+              ]
+            },
+            {
+              id: "quran-unit6",
+              title: "الوحدة السادسة",
+              lessons: [
+                { id: "q-u6-l1", number: 11, title: "التجويد: أنواع المد الفرعي", page: 48,
+                  objectives: ["أعرف أنواع المد الفرعي", "أطبقها في التلاوة"],
+                  content: "المد الفرعي أنواع:\n- المتصل: همز بعد حرف المد في كلمة واحدة (4-5 حركات واجب)\n- المنفصل: همز في كلمة بعد كلمة تنتهي بحرف مد (2-5 حركات جائز)\n- العارض للسكون: عند الوقف (2-4-6 حركات)\n- اللازم: سكون أصلي بعد حرف المد (6 حركات واجب)",
+                  examples: ["متصل: السَّمَاءِ", "منفصل: إِنَّا أَعْطَيْنَا", "عارض: نَسْتَعِينُ عند الوقف", "لازم: الضَّالِّينَ"],
+                  summary: "المد الفرعي أربعة أنواع: متصل ومنفصل وعارض ولازم، لكل منها مقدار محدد",
+                  quiz: [{ q: "ما نوع المد في (السَّمَاءِ)؟", a: "مد متصل", choices: ["مد طبيعي", "مد متصل", "مد منفصل", "مد لازم"] }] },
+                { id: "q-u6-l2", number: 12, title: "التلاوة: سورة الصافات من الآية (٩٩) إلى الآية (١٥٧)", page: 51,
+                  objectives: ["أتلو سورة الصافات من (٩٩) إلى (١٥٧) بإتقان"],
+                  content: "هذه الآيات تتضمن: تكملة قصة إبراهيم وابنه إسماعيل وفداء الذبيح العظيم، ثم ذكر قصص باقي الأنبياء: إسحاق ويعقوب وموسى وهارون وإلياس ولوط ويونس.",
+                  examples: ["قصة الذبيح وفداؤه بذبح عظيم", "قصة يونس عليه السلام في بطن الحوت"],
+                  summary: "آيات تتضمن قصص الأنبياء من إبراهيم وإسماعيل إلى يونس عليهم السلام",
+                  quiz: [{ q: "من الذي فُدي بذبح عظيم في سورة الصافات؟", a: "إسماعيل عليه السلام", choices: ["إسحاق", "إسماعيل عليه السلام", "يعقوب", "يوسف"] }] }
+              ]
+            },
+            {
+              id: "quran-unit7",
+              title: "الوحدة السابعة",
+              lessons: [
+                { id: "q-u7-l1", number: 13, title: "التجويد: المد المتصل - تعريفه وحكمه ومقداره وأمثلته", page: 56,
+                  objectives: ["أتقن تعريف المد المتصل وأطبقه"],
+                  content: "المد المتصل: همز بعد حرف المد في كلمة واحدة.\nحكمه: واجب المد (يُسمى مداً واجباً متصلاً)\nمقداره: 4 أو 5 حركات\nأمثلة: جَاءَ، جِيءَ، سُوءَ، مَاءَ، السَّمَاءِ",
+                  examples: ["جَاءَ: ألف مد ثم همز في نفس الكلمة", "سُوءَ: واو مد ثم همز في نفس الكلمة"],
+                  summary: "المد المتصل: همز بعد مد في كلمة، مقداره 4-5 حركات وجوباً",
+                  quiz: [{ q: "ما اسم المد الذي يكون همزه في نفس الكلمة؟", a: "المد المتصل", choices: ["المد المنفصل", "المد المتصل", "المد اللازم", "المد العارض"] }] },
+                { id: "q-u7-l2", number: 14, title: "التلاوة: من الآية (١٥٨) سورة الصافات إلى الآية (١٩) سورة يس", page: 59,
+                  objectives: ["أتلو الآيات المقررة بصحة وإتقان"],
+                  content: "هذه التلاوة تشمل: ختام سورة الصافات (١٥٨-١٨٢) التي تختم بتنزيه الله وسلامة الرسل، ثم بداية سورة يس (١-١٩) التي تُسمى قلب القرآن.",
+                  examples: ["ختام سورة الصافات: {سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ}", "بداية سورة يس بالحروف المقطعة والقسم"],
+                  summary: "تلاوة تجمع بين ختام الصافات وبداية يس قلب القرآن الكريم",
+                  quiz: [{ q: "بم تُلقَّب سورة يس؟", a: "قلب القرآن", choices: ["أم الكتاب", "قلب القرآن", "الزهراء", "نور القرآن"] }] }
+              ]
+            },
+            {
+              id: "quran-unit8",
+              title: "الوحدة الثامنة",
+              lessons: [
+                { id: "q-u8-l1", number: 15, title: "التجويد: المد المنفصل - تعريفه وحكمه ومقداره وأمثلته", page: 64,
+                  objectives: ["أتقن المد المنفصل وأطبقه في التلاوة"],
+                  content: "المد المنفصل: همز في أول كلمة تالية لكلمة تنتهي بحرف مد.\nحكمه: جائز (يُسمى مداً جائزاً منفصلاً)\nمقداره: حركتان أو أربع أو خمس\nأمثلة: إِنَّا أَعْطَيْنَاكَ، بِمَا أُنزِلَ، قَالُوا آمَنَّا",
+                  examples: ["إِنَّا أَعْطَيْنَاكَ: نون الكلمة الأولى ثم همز الكلمة الثانية", "بِمَا أُنزِلَ: ألف كلمة ثم همز الكلمة التالية"],
+                  summary: "المد المنفصل: همز في كلمة بعد مد في كلمة قبلها، مقداره 2-5 حركات جوازاً",
+                  quiz: [{ q: "ما حكم المد المنفصل؟", a: "جائز", choices: ["واجب", "جائز", "لازم", "طبيعي"] }] },
+                { id: "q-u8-l2", number: 16, title: "التلاوة: سورة يس من الآية (٢٠) إلى الآية (٥٠)", page: 68,
+                  objectives: ["أتلو سورة يس من (٢٠) إلى (٥٠) بإتقان"],
+                  content: "الآيات (٢٠-٥٠) تتضمن: قصة أصحاب القرية مع الرسل وقصة الرجل المؤمن، ثم الحديث عن قدرة الله في الخلق والرزق والأرض والليل والنهار.",
+                  examples: ["قصة أصحاب القرية ودعوة الرسل لهم", "قصة الرجل المؤمن الذي جاء من أقصى المدينة"],
+                  summary: "آيات تتناول قصة أصحاب القرية والدلائل على قدرة الله في الخلق",
+                  quiz: [{ q: "ماذا فعل الرجل المؤمن في سورة يس؟", a: "جاء من أقصى المدينة ليؤمن بالرسل", choices: ["كذّب الرسل", "جاء من أقصى المدينة ليؤمن بالرسل", "هرب", "بقي صامتاً"] }] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// Export data
+if (typeof module !== 'undefined') module.exports = PLATFORM_DATA;
+
+// ===== UI CONTROLLER =====
+const UI = {
+  goHome() {
+    document.getElementById('landing-page').classList.add('active');
+    document.getElementById('platform-page').classList.remove('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  },
+  showPlatform() {
+    document.getElementById('landing-page').classList.remove('active');
+    document.getElementById('platform-page').classList.add('active');
+    document.getElementById('platform-home').style.display = '';
+    document.getElementById('lesson-view').style.display = 'none';
+    document.getElementById('dash-view').style.display = 'none';
+    window.scrollTo({top:0,behavior:'smooth'});
+    App.renderSidebar();
+    App.renderPlatformBooks();
+  },
+  showDash() {
+    document.getElementById('landing-page').classList.remove('active');
+    document.getElementById('platform-page').classList.add('active');
+    document.getElementById('platform-home').style.display = 'none';
+    document.getElementById('lesson-view').style.display = 'none';
+    document.getElementById('dash-view').style.display = '';
+    App.renderDash();
+  },
+  scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior:'smooth'});
+  }
+};
+
+// ===== MAIN APP =====
+const App = {
+  state: {
+    currentBook: null,
+    currentLesson: null,
+    progress: {},
+    quizAnswers: {},
+  },
+
+  init() {
+    this.loadProgress();
+    this.renderLandingBooks();
+    this.updateStats();
+    this.renderSidebar();
+    this.renderPlatformBooks();
+    this.bindEvents();
+  },
+
+  loadProgress() {
+    try { this.state.progress = JSON.parse(localStorage.getItem('albandari_v2') || '{}'); }
+    catch { this.state.progress = {}; }
+  },
+  saveProgress() { localStorage.setItem('albandari_v2', JSON.stringify(this.state.progress)); },
+  isCompleted(id) { return !!this.state.progress[id]?.completed; },
+  markComplete(id) {
+    this.state.progress[id] = { completed: true, date: new Date().toISOString() };
+    this.saveProgress();
+    this.showToast('تم إتمام الدرس! 🎉');
+    this.renderSidebar();
+  },
+
+  getAllLessons(book) {
+    const arr = [];
+    book.units.forEach(u => u.chapters.forEach(ch => {
+      (ch.lessons || []).forEach(l => arr.push({...l, bookId: book.id}));
+      (ch.sections || []).forEach(s => s.lessons.forEach(l => arr.push({...l, bookId: book.id})));
+    }));
+    return arr;
+  },
+  getAllFlat() {
+    const arr = [];
+    PLATFORM_DATA.books.forEach(b => this.getAllLessons(b).forEach(l => arr.push(l)));
+    return arr;
+  },
+  findLesson(id) { return this.getAllFlat().find(l => l.id === id); },
+  findBook(id) { return PLATFORM_DATA.books.find(b => b.id === id); },
+  getProgress() {
+    const all = this.getAllFlat();
+    const done = all.filter(l => this.isCompleted(l.id)).length;
+    return all.length ? Math.round((done/all.length)*100) : 0;
+  },
+
+  updateStats() {
+    const all = this.getAllFlat();
+    const el = id => document.getElementById(id);
+    if (el('stat-lessons')) el('stat-lessons').textContent = all.length;
+    if (el('stat-books')) el('stat-books').textContent = PLATFORM_DATA.books.length;
+  },
+
+  // ===== LANDING BOOKS =====
+  renderLandingBooks() {
+    const wrap = document.getElementById('landing-books');
+    if (!wrap) return;
+    wrap.innerHTML = PLATFORM_DATA.books.map(book => {
+      const lessons = this.getAllLessons(book);
+      const done = lessons.filter(l => this.isCompleted(l.id)).length;
+      const pct = lessons.length ? Math.round((done/lessons.length)*100) : 0;
+      return `
+        <div class="book-card" onclick="UI.showPlatform();setTimeout(()=>App.openBook('${book.id}'),100)">
+          <div class="book-cover" style="background:linear-gradient(135deg,${book.coverColor},${book.color})">
+            <span class="book-emoji">${book.icon}</span>
+            <div class="book-name">${book.title}</div>
+            <div class="book-by">${book.subtitle}</div>
+          </div>
+          <div class="book-body">
+            <div class="book-meta">
+              <span class="badge">📖 ${lessons.length} درس</span>
+              <span class="badge">✓ ${done} مكتمل</span>
+            </div>
+            <div class="book-progress-wrap">
+              <div class="book-progress-hd"><span>التقدم</span><span style="color:${book.color};font-weight:700">${pct}%</span></div>
+              <div class="book-bar"><div class="book-fill" style="width:${pct}%;background:${book.color}"></div></div>
+            </div>
+            <button class="btn-book" style="background:linear-gradient(135deg,${book.coverColor},${book.color})">
+              ${pct > 0 ? '▶ متابعة الدراسة' : '🚀 ابدأ الكتاب'}
+            </button>
+          </div>
+        </div>`;
+    }).join('');
+  },
+
+  // ===== PLATFORM BOOKS =====
+  renderPlatformBooks() {
+    const wrap = document.getElementById('platform-books-grid');
+    if (!wrap) return;
+    wrap.innerHTML = PLATFORM_DATA.books.map(book => {
+      const lessons = this.getAllLessons(book);
+      const done = lessons.filter(l => this.isCompleted(l.id)).length;
+      const pct = lessons.length ? Math.round((done/lessons.length)*100) : 0;
+      return `
+        <div class="book-card" onclick="App.openBook('${book.id}')">
+          <div class="book-cover" style="background:linear-gradient(135deg,${book.coverColor},${book.color})">
+            <span class="book-emoji">${book.icon}</span>
+            <div class="book-name">${book.title}</div>
+            <div class="book-by">${book.subtitle}</div>
+          </div>
+          <div class="book-body">
+            <div class="book-meta">
+              <span class="badge">📖 ${lessons.length} درس</span>
+              <span class="badge">✓ ${done} مكتمل</span>
+            </div>
+            <div class="book-progress-wrap">
+              <div class="book-progress-hd"><span>التقدم</span><span style="color:${book.color};font-weight:700">${pct}%</span></div>
+              <div class="book-bar"><div class="book-fill" style="width:${pct}%;background:${book.color}"></div></div>
+            </div>
+            <button class="btn-book" style="background:linear-gradient(135deg,${book.coverColor},${book.color})">
+              ${pct > 0 ? '▶ متابعة الدراسة' : '🚀 ابدأ الكتاب'}
+            </button>
+          </div>
+        </div>`;
+    }).join('');
+  },
+
+  openBook(bookId) {
+    const book = this.findBook(bookId);
+    if (!book) return;
+    const lessons = this.getAllLessons(book);
+    const first = lessons.find(l => !this.isCompleted(l.id)) || lessons[0];
+    if (first) {
+      this.toggleSbBook(bookId);
+      this.goLesson(bookId, first.id);
+    }
+  },
+
+  // ===== SIDEBAR =====
+  renderSidebar() {
+    const nav = document.getElementById('sidebar-nav');
+    if (!nav) return;
+    let html = '';
+    PLATFORM_DATA.books.forEach(book => {
+      const all = this.getAllLessons(book);
+      const done = all.filter(l => this.isCompleted(l.id)).length;
+      html += `
+        <div class="sb-section">
+          <div class="sb-book-header" id="sbh-${book.id}" onclick="App.toggleSbBook('${book.id}')">
+            <span style="font-size:18px">${book.icon}</span>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:13px;line-height:1.3">${book.title}</div>
+              <div style="font-size:11px;color:var(--text-light);font-weight:400">${done}/${all.length} درس</div>
+            </div>
+            <span id="sba-${book.id}" style="font-size:11px;transition:transform 0.3s">▼</span>
+          </div>
+          <div class="sb-book-content" id="sbc-${book.id}">`;
+      book.units.forEach(u => u.chapters.forEach(ch => {
+        html += `<div class="sb-chapter">${ch.title}</div>`;
+        (ch.lessons || []).forEach(l => {
+          const done = this.isCompleted(l.id);
+          html += `<div class="sb-lesson" id="sbl-${l.id}" onclick="App.goLesson('${book.id}','${l.id}')">
+            <span class="sb-badge">${done ? '✓' : l.number}</span>
+            <span style="flex:1">${l.title}</span>
+          </div>`;
+        });
+        (ch.sections || []).forEach(s => {
+          html += `<div class="sb-chapter" style="font-size:11px">${s.title.substring(0,35)}...</div>`;
+          s.lessons.forEach(l => {
+            const done = this.isCompleted(l.id);
+            html += `<div class="sb-lesson" id="sbl-${l.id}" onclick="App.goLesson('${book.id}','${l.id}')">
+              <span class="sb-badge">${done ? '✓' : l.number}</span>
+              <span style="flex:1">${l.title}</span>
+            </div>`;
+          });
+        });
+      }));
+      html += `</div></div>`;
+    });
+    nav.innerHTML = html;
+  },
+
+  toggleSbBook(bookId) {
+    const content = document.getElementById(`sbc-${bookId}`);
+    const arrow = document.getElementById(`sba-${bookId}`);
+    const header = document.getElementById(`sbh-${bookId}`);
+    const isExp = content?.classList.contains('expanded');
+    document.querySelectorAll('.sb-book-content').forEach(el => el.classList.remove('expanded'));
+    document.querySelectorAll('[id^="sba-"]').forEach(el => el.style.transform = '');
+    document.querySelectorAll('.sb-book-header').forEach(el => el.classList.remove('active'));
+    if (!isExp) {
+      content?.classList.add('expanded');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+      header?.classList.add('active');
+    }
+  },
+
+  // ===== LESSON =====
+  goLesson(bookId, lessonId) {
+    document.getElementById('platform-home').style.display = 'none';
+    document.getElementById('dash-view').style.display = 'none';
+    const lv = document.getElementById('lesson-view');
+    lv.style.display = '';
+    this.state.currentBook = bookId;
+    this.state.currentLesson = lessonId;
+    document.querySelectorAll('.sb-lesson').forEach(el => el.classList.remove('active'));
+    const navEl = document.getElementById(`sbl-${lessonId}`);
+    if (navEl) { navEl.classList.add('active'); navEl.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    this.toggleSbBook(bookId);
+    this.renderLesson(lessonId);
+    window.scrollTo({top:0,behavior:'smooth'});
+    this.closeSbMobile();
+  },
+
+  renderLesson(lessonId) {
+    const lesson = this.findLesson(lessonId);
+    if (!lesson) return;
+    const book = this.findBook(lesson.bookId);
+    const all = this.getAllFlat();
+    const idx = all.findIndex(l => l.id === lessonId);
+    const prev = idx > 0 ? all[idx-1] : null;
+    const next = idx < all.length-1 ? all[idx+1] : null;
+    const done = this.isCompleted(lessonId);
+    const lv = document.getElementById('lesson-view');
+
+    let html = `
+      <div class="lesson-topbar">
+        <div style="display:flex;gap:8px">
+          ${prev ? `<button class="lesson-nav-btn" onclick="App.goLesson('${prev.bookId}','${prev.id}')">→ السابق</button>` : '<div></div>'}
+          ${next ? `<button class="lesson-nav-btn" onclick="App.goLesson('${next.bookId}','${next.id}')">التالي ←</button>` : ''}
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="lesson-nav-btn" onclick="document.getElementById('platform-home').style.display='';document.getElementById('lesson-view').style.display='none'">🏠 الكتب</button>
+          ${!done ? `<button onclick="App.markComplete('${lessonId}')" style="padding:10px 20px;border:none;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--rose-dark),var(--rose));color:white;font-family:var(--font);font-size:14px;font-weight:700;cursor:pointer">✓ إتمام الدرس</button>` : '<span style="color:var(--rose);font-weight:700;font-size:15px">✅ مكتمل</span>'}
+        </div>
+      </div>
+
+      <div class="lesson-header-card" style="background:linear-gradient(135deg,${book.coverColor},${book.color})">
+        <div class="lesson-num-tag">الدرس ${lesson.number}</div>
+        <div class="lesson-main-title">${lesson.title}</div>
+        <div class="lesson-book-tag">${book.icon} ${book.title}</div>
+      </div>
+
+      <div class="cards-grid">`;
+
+    if (lesson.objectives?.length) html += `
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-green">🎯</div><div class="card-ttl">أهداف الدرس</div></div>
+        <div class="card-body"><ul class="obj-list">${lesson.objectives.map(o=>`<li>${o}</li>`).join('')}</ul></div>
+      </div>`;
+
+    if (lesson.content) html += `
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-blue">📖</div><div class="card-ttl">شرح الدرس</div></div>
+        <div class="card-body"><div class="content-text">${lesson.content}</div></div>
+      </div>`;
+
+    if (lesson.examples?.length) html += `
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-pink">💡</div><div class="card-ttl">أمثلة</div></div>
+        <div class="card-body"><div class="examples-grid">${lesson.examples.map(e=>`<div class="example-pill">${e}</div>`).join('')}</div></div>
+      </div>`;
+
+    html += `
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-purple">🎬</div><div class="card-ttl">فيديو الدرس</div></div>
+        <div class="card-body">
+          <div class="video-box">
+            <div class="play-circle">▶</div>
+            <div style="font-size:15px;opacity:0.8">فيديو شرح: ${lesson.title}</div>
+            <div style="font-size:12px;opacity:0.5;margin-top:6px">أضف رابط الفيديو</div>
+          </div>
+        </div>
+      </div>`;
+
+    if (lesson.summary) html += `
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-green">📋</div><div class="card-ttl">الملخص</div></div>
+        <div class="card-body"><div class="summary-box">${lesson.summary}</div></div>
+      </div>
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-pink">🃏</div><div class="card-ttl">بطاقة المراجعة — اضغط للقلب</div></div>
+        <div class="card-body">
+          <div class="flashcard-wrap">
+            <div class="flashcard" onclick="this.classList.toggle('flipped')" style="min-height:200px">
+              <div class="fc-face fc-front"><div><div class="fc-text">${lesson.title}</div><div class="fc-hint">اضغط لرؤية الملخص</div></div></div>
+              <div class="fc-face fc-back"><div><div class="fc-text">${lesson.summary}</div><div class="fc-hint">اضغط للعودة</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    if (lesson.quiz?.length) html += this.buildQuiz(lesson);
+
+    if (!done) html += `
+      <div style="text-align:center;padding:16px 0 32px">
+        <button class="complete-btn" onclick="App.markComplete('${lessonId}')">✅ انتهيت من الدرس</button>
+      </div>`;
+
+    html += `</div>`;
+
+    if (next) html += `
+      <div class="next-lesson-card" onclick="App.goLesson('${next.bookId}','${next.id}')">
+        <div style="flex:1">
+          <div style="font-size:12px;color:var(--text-light);margin-bottom:4px">الدرس التالي</div>
+          <div style="font-weight:700;color:var(--text);font-size:17px">${next.title}</div>
+        </div>
+        <div style="font-size:24px;color:var(--rose)">←</div>
+      </div>`;
+
+    lv.innerHTML = html;
+    this.state.quizAnswers[`quiz-${lessonId}`] = { answers:{}, total: lesson.quiz?.length || 0 };
+  },
+
+  buildQuiz(lesson) {
+    const qid = `quiz-${lesson.id}`;
+    let html = `
+      <div class="content-card">
+        <div class="card-head"><div class="card-ico ico-purple">🧠</div><div class="card-ttl">اختبار الدرس</div></div>
+        <div class="card-body"><div id="${qid}">`;
+    lesson.quiz.forEach((q, qi) => {
+      html += `
+        <div class="quiz-q">
+          <div class="quiz-num">السؤال ${qi+1}</div>
+          <div class="quiz-text">${q.q}</div>
+          <div class="quiz-choices" id="${qid}-q${qi}">
+            ${q.choices.map(c => `<button class="quiz-choice" onclick="App.answer('${qid}',${qi},'${c.replace(/'/g,"\\'")}','${q.a.replace(/'/g,"\\'")}',this)">${c}</button>`).join('')}
+          </div>
+        </div>`;
+    });
+    html += `
+          <div id="${qid}-result" class="quiz-result">
+            <div class="quiz-score" id="${qid}-score">0%</div>
+            <div class="quiz-feedback" id="${qid}-fb">-</div>
+            <button class="btn-retry" onclick="App.retryQuiz('${qid}','${lesson.id}')">🔄 إعادة الاختبار</button>
+          </div>
+        </div></div>
+      </div>`;
+    return html;
+  },
+
+  answer(qid, qi, chosen, correct, btn) {
+    const box = document.getElementById(`${qid}-q${qi}`);
+    box.querySelectorAll('.quiz-choice').forEach(b => {
+      b.disabled = true;
+      if (b.textContent.trim() === correct) b.classList.add('correct');
+    });
+    btn.classList.add(chosen === correct ? 'correct' : 'wrong');
+    if (!this.state.quizAnswers[qid]) this.state.quizAnswers[qid] = {answers:{},total:0};
+    this.state.quizAnswers[qid].answers[qi] = chosen === correct;
+    const qa = this.state.quizAnswers[qid];
+    if (Object.keys(qa.answers).length === qa.total) setTimeout(() => this.showResult(qid), 500);
+  },
+
+  showResult(qid) {
+    const qa = this.state.quizAnswers[qid];
+    const correct = Object.values(qa.answers).filter(Boolean).length;
+    const pct = Math.round((correct/qa.total)*100);
+    const res = document.getElementById(`${qid}-result`);
+    const score = document.getElementById(`${qid}-score`);
+    const fb = document.getElementById(`${qid}-fb`);
+    if (res) {
+      score.textContent = `${pct}%`;
+      fb.textContent = pct===100 ? '🌟 ممتاز! إجابات صحيحة بالكامل!' :
+                       pct>=70  ? '✅ جيد جداً! استمر في التعلم' :
+                       pct>=50  ? '📚 جيد، راجع الدرس وحاول مجدداً' :
+                                  '💪 راجع الدرس جيداً وأعد المحاولة';
+      res.classList.add('show');
+      res.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+  },
+
+  retryQuiz(qid, lessonId) {
+    const lesson = this.findLesson(lessonId);
+    if (lesson) {
+      const box = document.getElementById(qid);
+      if (box) { box.innerHTML = ''; }
+      const card = document.querySelector(`#${qid}`)?.closest('.content-card');
+      this.state.quizAnswers[qid] = {answers:{}, total: lesson.quiz.length};
+      const tmp = document.createElement('div');
+      tmp.innerHTML = this.buildQuiz(lesson);
+      const newBox = tmp.querySelector(`#${qid}`);
+      if (box && newBox) box.innerHTML = newBox.innerHTML;
+    }
+  },
+
+  // ===== DASHBOARD =====
+  renderDash() {
+    const all = this.getAllFlat();
+    const done = all.filter(l => this.isCompleted(l.id)).length;
+    const pct = this.getProgress();
+    const el = document.getElementById('dash-view');
+    el.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;flex-wrap:wrap;gap:12px">
+        <div><div class="section-label">لوحة المتابعة</div><h2 class="section-title" style="margin-bottom:0">تقدمك الدراسي</h2></div>
+        <button onclick="UI.goHome()" style="padding:10px 20px;border:1.5px solid var(--pink-mid);background:white;border-radius:var(--radius-sm);font-family:var(--font);font-size:14px;color:var(--text-mid);cursor:pointer">🏠 الرئيسية</button>
+      </div>
+      <div class="dash-grid">
+        <div class="dash-card"><div class="dash-icon">📚</div><div class="dash-val">${PLATFORM_DATA.books.length}</div><div class="dash-lbl">مواد دراسية</div></div>
+        <div class="dash-card"><div class="dash-icon">📖</div><div class="dash-val">${all.length}</div><div class="dash-lbl">إجمالي الدروس</div></div>
+        <div class="dash-card"><div class="dash-icon">✅</div><div class="dash-val">${done}</div><div class="dash-lbl">دروس مكتملة</div></div>
+        <div class="dash-card"><div class="dash-icon">📈</div><div class="dash-val">${pct}%</div><div class="dash-lbl">نسبة الإنجاز</div></div>
+      </div>
+      <div class="section-label" style="margin-bottom:20px">تفاصيل كل مادة</div>
+      <div style="display:grid;gap:16px;margin-bottom:40px">
+        ${PLATFORM_DATA.books.map(book => {
+          const ls = this.getAllLessons(book);
+          const d = ls.filter(l => this.isCompleted(l.id)).length;
+          const p = ls.length ? Math.round((d/ls.length)*100) : 0;
+          return `<div style="background:white;border-radius:var(--radius);padding:22px 28px;border:1px solid var(--pink-mid);box-shadow:var(--shadow)">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+              <span style="font-size:28px">${book.icon}</span>
+              <div style="flex:1"><div style="font-weight:800;color:var(--text)">${book.title}</div><div style="font-size:13px;color:var(--text-light)">${d}/${ls.length} درس</div></div>
+              <span style="font-size:22px;font-weight:900;color:${book.color}">${p}%</span>
+            </div>
+            <div style="background:var(--pink-mid);border-radius:50px;height:8px;overflow:hidden">
+              <div style="height:100%;width:${p}%;background:${book.color};border-radius:50px;transition:width 1s ease"></div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="background:white;border-radius:var(--radius);padding:24px;border:1px solid var(--pink-mid)">
+        <div class="section-label" style="margin-bottom:16px">الإعدادات</div>
+        <button onclick="App.resetAll()" style="background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.25);color:#dc2626;padding:10px 24px;border-radius:var(--radius-sm);cursor:pointer;font-family:var(--font);font-size:14px">
+          🗑️ إعادة تعيين التقدم
+        </button>
+      </div>`;
+  },
+
+  resetAll() {
+    if (confirm('هل أنت متأكدة؟ سيتم حذف كل التقدم.')) {
+      this.state.progress = {};
+      this.saveProgress();
+      this.renderSidebar();
+      UI.goHome();
+      this.showToast('تم إعادة التعيين');
+    }
+  },
+
+  // ===== SEARCH =====
+  search(q) {
+    const res = document.getElementById('sb-results');
+    if (!res) return;
+    if (!q.trim()) { res.classList.remove('show'); return; }
+    const matches = this.getAllFlat().filter(l =>
+      l.title.toLowerCase().includes(q.toLowerCase()) ||
+      l.content?.includes(q) || l.summary?.includes(q)
+    ).slice(0,8);
+    if (!matches.length) {
+      res.innerHTML = '<div style="padding:16px;text-align:center;color:var(--text-light);font-size:13px">لا توجد نتائج</div>';
+    } else {
+      res.innerHTML = matches.map(l => {
+        const book = this.findBook(l.bookId);
+        return `<div class="sb-result-item" onclick="App.goLesson('${l.bookId}','${l.id}');document.getElementById('sb-results').classList.remove('show')">
+          <div class="sb-result-title">${l.title}</div>
+          <div class="sb-result-book">${book?.icon} ${book?.title}</div>
+        </div>`;
+      }).join('');
+    }
+    res.classList.add('show');
+  },
+
+  // ===== MOBILE ===== 
+  toggleSbMobile() {
+    document.getElementById('sidebar')?.classList.toggle('open');
+    document.getElementById('sb-overlay')?.classList.toggle('show');
+  },
+  closeSbMobile() {
+    if (window.innerWidth <= 1024) {
+      document.getElementById('sidebar')?.classList.remove('open');
+      document.getElementById('sb-overlay')?.classList.remove('show');
+    }
+  },
+
+  // ===== TOAST =====
+  showToast(msg) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  },
+
+  // ===== EVENTS =====
+  bindEvents() {
+    document.getElementById('menu-toggle')?.addEventListener('click', () => this.toggleSbMobile());
+    document.getElementById('sb-overlay')?.addEventListener('click', () => this.closeSbMobile());
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.sb-search-wrap')) document.getElementById('sb-results')?.classList.remove('show');
+    });
+  }
+};
+
+window.addEventListener('load', () => App.init());
+</script>
+
+</body>
+</html>
